@@ -36,12 +36,11 @@ https://www.bilibili.com/video/BV1TJ411d7b7
 
 ## 其他课程
 
-- Labml.ai:逐行讲解深度学习算法：https://nn.labml.ai/index.html
-快速上手Ai理论及应用实战：https://github.com/ben1234560/AiLearning-Theory-Applying
-- PKU-TANGENT nlp-tutorial
-：https://github.com/PKU-TANGENT/nlp-tutorial
-- DeepLearning Tutorial(深度学习资料汇总)：
-https://github.com/Mikoto10032/DeepLearning
+- [Labml.ai](https://nn.labml.ai/index.html)逐行讲解深度学习算法
+- [快速上手Ai理论及应用实战](https://github.com/ben1234560/AiLearning-Theory-Applying)
+- [PKU-TANGENT nlp-tutorial](https://github.com/PKU-TANGENT/nlp-tutorial)
+- [DeepLearning Tutorial(深度学习资料汇总)](https://github.com/Mikoto10032/DeepLearning)
+- [Data-Science-Notes](https://github.com/fengdu78/Data-Science-Notes)
 
 
 # 机器学习资料
@@ -98,13 +97,12 @@ https://github.com/wzyonggege/statistical-learning-method
 资源链接：https://openai.com/blog/spinning-up-in-deep-rl/
 
 # 图神经网络资料
-## 《图表示学习》byWilliam L. Hamilton:
-https://www.cs.mcgill.ca/~wlh/grl_book/
+## [《图表示学习》](https://www.cs.mcgill.ca/~wlh/grl_book/)byWilliam L. Hamilton:
 ## CS224W 斯坦福图神经网络课程：
 - B站链接：https://www.bilibili.com/video/BV1RZ4y1c7Co/?p=2&spm_id_from=pageDriver&vd_source=e587bac74600ca53ef886eea337fe87d
 - 官网链接：http://web.stanford.edu/class/cs224w/
 # 在线工具
-- AI算法工程师手册：http://www.huaxiaozhuan.com/
+- [AI算法工程师手册](http://www.huaxiaozhuan.com/)
 
 # 数学基础
 - 《矩阵力量》鸢尾花书：从加减乘除到机器学习
