@@ -11,6 +11,37 @@ https://www.w3schools.com/python/default.asp
 https://www.bilibili.com/video/BV1K7411c7EL?from=search&seid=14197653833108365678
 - 在线编辑器Juprter（吴恩达深度学习视频编辑器）的介绍视频：
 https://www.bilibili.com/video/BV1Q4411H7fJ?from=search&seid=17338845957708330770
+
+
+# 深度学习资料
+## 李沐动手深度学习教程
+
+- 视频课程：https://www.bilibili.com/video/BV1if4y147hS?spm_id_from=333.999.0.0
+- 在线书籍：https://d2l.ai/chapter_preface/index.html （英文版更新快，有PYTORCH，MEXNET,JAX 和 TENSORFLOW实现，中文版也有，只是更新稍慢）
+
+## 吴恩达深度学习视频课程（中英文字幕）：
+- 吴恩达深度学习视频课程（中英文字幕）：
+https://www.bilibili.com/video/BV164411m79z?p=1（这是第一课，剩下的都在这个UP主投稿页面可以找到）
+- 配套作业及参考答案：https://blog.csdn.net/u013733326/article/details/79827273
+- 作业知识点：
+https://zhuanlan.zhihu.com/p/95510114
+
+## 深度学习（花书）学习资料
+视频讲解：https://www.bilibili.com/video/BV1Gk4y1m7LQ
+
+## 斯坦福李飞飞教授cs231n计算机视觉经典课程
+https://www.bilibili.com/video/BV1TJ411d7b7
+
+## 其他课程
+
+- Labml.ai:逐行讲解深度学习算法：https://nn.labml.ai/index.html
+快速上手Ai理论及应用实战：https://github.com/ben1234560/AiLearning-Theory-Applying
+- PKU-TANGENT nlp-tutorial
+：https://github.com/PKU-TANGENT/nlp-tutorial
+- DeepLearning Tutorial(深度学习资料汇总)：
+https://github.com/Mikoto10032/DeepLearning
+
+
 # 机器学习资料
 ## 吴恩达视频课程资料
 - 吴恩达在线学习资料汇总：https://zhuanlan.zhihu.com/p/108247059
@@ -47,32 +78,6 @@ https://github.com/wzyonggege/statistical-learning-method
 # 张志华机器学习资料
 视频课程（研究生课程，数学味很浓）https://www.bilibili.com/video/BV1jt411b76n
 
-# 深度学习资料
-## 李沐动手深度学习教程（最近在看）
-视频课程：https://www.bilibili.com/video/BV1if4y147hS?spm_id_from=333.999.0.0
-在线书籍：https://d2l.ai/chapter_preface/index.html（英文版更新快，有pytorch和tensorlow实现，中文更新慢）
-
-## 吴恩达深度学习视频课程（中英文字幕）：
-- 吴恩达深度学习视频课程（中英文字幕）：
-https://www.bilibili.com/video/BV164411m79z?p=1（这是第一课，剩下的都在这个UP主投稿页面可以找到）
-- 配套作业及参考答案：https://blog.csdn.net/u013733326/article/details/79827273
-- 作业知识点：
-https://zhuanlan.zhihu.com/p/95510114
-
-## 深度学习（花书）学习资料
-视频讲解：https://www.bilibili.com/video/BV1Gk4y1m7LQ
-
-## 斯坦福李飞飞教授cs231n计算机视觉经典课程
-https://www.bilibili.com/video/BV1TJ411d7b7
-
-## 其他课程
-
-- Labml.ai:逐行讲解深度学习算法：https://nn.labml.ai/index.html
-快速上手Ai理论及应用实战：https://github.com/ben1234560/AiLearning-Theory-Applying
-- PKU-TANGENT nlp-tutorial
-：https://github.com/PKU-TANGENT/nlp-tutorial
-- DeepLearning Tutorial(深度学习资料汇总)：
-https://github.com/Mikoto10032/DeepLearning
 
 # 强化学习资料
 ## 周博磊强化学习
