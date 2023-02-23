@@ -17,7 +17,8 @@ https://www.bilibili.com/video/BV1Q4411H7fJ?from=search&seid=1733884595770833077
 ## 李沐动手深度学习教程
 
 - 视频课程：https://www.bilibili.com/video/BV1if4y147hS?spm_id_from=333.999.0.0
-- 在线书籍（包含代码实现）：https://d2l.ai/chapter_preface/index.html （英文版更新快，有PYTORCH，MEXNET,JAX 和 TENSORFLOW实现，中文版是MEXNET,PYTORCH，TENSORFLOW 和 PADDLE实现）
+- [Dive into deep learning](https://d2l.ai/chapter_preface/index.html) （英文版是 PYTORCH，MEXNET,JAX 和 TENSORFLOW实现， 更新更快）
+- [动手深度学习](https://zh.d2l.ai/) （中文版是MEXNET,PYTORCH，TENSORFLOW 和 PADDLE实现）
 
 
 ## 吴恩达深度学习视频课程（中英文字幕）：
