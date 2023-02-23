@@ -27,7 +27,7 @@ https://www.bilibili.com/video/BV164411m79z?p=1（这是第一课，剩下的都
 https://zhuanlan.zhihu.com/p/95510114
 
 ## 深度学习（花书）学习资料
-视频讲解：https://www.bilibili.com/video/BV1Gk4y1m7LQ
+- 视频讲解：https://www.bilibili.com/video/BV1Gk4y1m7LQ
 
 ## 斯坦福李飞飞教授cs231n计算机视觉经典课程
 https://www.bilibili.com/video/BV1TJ411d7b7
@@ -99,13 +99,13 @@ https://github.com/wzyonggege/statistical-learning-method
 ## 《图表示学习》byWilliam L. Hamilton:
 https://www.cs.mcgill.ca/~wlh/grl_book/
 ## CS224W 斯坦福图神经网络课程：
-https://www.bilibili.com/video/BV1RZ4y1c7Co/?p=2&spm_id_from=pageDriver&vd_source=e587bac74600ca53ef886eea337fe87d
-官网链接：http://web.stanford.edu/class/cs224w/
+- B站链接：https://www.bilibili.com/video/BV1RZ4y1c7Co/?p=2&spm_id_from=pageDriver&vd_source=e587bac74600ca53ef886eea337fe87d
+- 官网链接：http://web.stanford.edu/class/cs224w/
 # 在线工具
-AI算法工程师手册：http://www.huaxiaozhuan.com/
+- AI算法工程师手册：http://www.huaxiaozhuan.com/
 
 # 数学基础
-《矩阵力量》鸢尾花书：从加减乘除到机器学习
+- 《矩阵力量》鸢尾花书：从加减乘除到机器学习
 ：https://github.com/Visualize-ML/Book4_Power-of-Matrix
 # 计算机学习资料
 - 图解计算机基础：https://xiaolincoding.com/?continueFlag=58e743bc8c677bd168dbe58a10f95ade
@@ -113,7 +113,7 @@ AI算法工程师手册：http://www.huaxiaozhuan.com/
 《 Hello，算法 》动画图解、能运行、可讨论的数据结构与算法快速入门教程：
 https://github.com/krahets/hello-algo
 # 控制理论和深度学习
-【数据驱动控制】Data-Driven Control with Machine Learning/中英字幕
+- 【数据驱动控制】Data-Driven Control with Machine Learning/中英字幕
 
 https://www.bilibili.com/video/BV1HW4y1W7x4/?spm_id_from=333.999.0.0&vd_source=e587bac74600ca53ef886eea337fe87d
 
