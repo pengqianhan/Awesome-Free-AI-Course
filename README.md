@@ -1,11 +1,10 @@
 在网上收集的经典人工智能学习资料，希望可以帮到大家
 # Python学习资料
 - 北邮陈光老师（微博及B站ID爱可可-爱生活）Python视频：https://www.bilibili.com/video/BV1b7411N7P2
-- 莫烦PYTHON：https://mofanpy.com/（有python课程也有机器学习课程，内容很多）
-- 廖雪峰Python教程：https://www.liaoxuefeng.com/wiki/1016959663602400
-- 菜鸟教程：https://www.runoob.com/python3/python3-tutorial.html（很简洁的python教程，如果看完视频课程有记不住的可以在这个网站查询）
-- W3school教程（菜鸟教程貌似是翻译这个网站的）：
-https://www.w3schools.com/python/default.asp
+- [莫烦PYTHON](https://mofanpy.com/) （有python课程也有机器学习课程，内容很多）
+- [廖雪峰Python教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+- [菜鸟教程](https://www.runoob.com/python3/python3-tutorial.html) （很简洁的python教程，如果看完视频课程有记不住的可以在这个网站查询）
+- [W3school教程](https://www.w3schools.com/python/default.asp)（菜鸟教程貌似是翻译这个网站的）：
 中文网站：https://www.w3school.com.cn/index.html
 - 环境配置之Python+Anaconda+PyCharm的安装和基本使用：
 https://www.bilibili.com/video/BV1K7411c7EL?from=search&seid=14197653833108365678
