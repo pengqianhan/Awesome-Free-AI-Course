@@ -7,9 +7,10 @@
 - [W3school教程](https://www.w3schools.com/python/default.asp)（菜鸟教程貌似是翻译这个网站的）：
 中文网站：https://www.w3school.com.cn/index.html
 - 环境配置之Python+Anaconda+PyCharm的安装和基本使用：
-https://www.bilibili.com/video/BV1K7411c7EL?from=search&seid=14197653833108365678
+(https://www.bilibili.com/video/BV1K7411c7EL?from=search&seid=14197653833108365678)
 - 在线编辑器Juprter（吴恩达深度学习视频编辑器）的介绍视频：
-https://www.bilibili.com/video/BV1Q4411H7fJ?from=search&seid=17338845957708330770
+(https://www.bilibili.com/video/BV1Q4411H7fJ?from=search&seid=17338845957708330770)
+- 游戏化编程学习网站 (https://www.freecodecamp.org/chinese/learn/)
 
 
 # 深度学习资料
