@@ -87,8 +87,7 @@ https://github.com/wzyonggege/statistical-learning-method
 - 视频地址：https://www.youtube.com/watch?v=vmkRMvhCW5c&t=51s
 - 课件地址：https://github.com/wangshusen/DRL
 ## Stable Baselines
-大量深度强化学习算法优质实现，文档丰富，包含 Colab Notebook，深度强化学习入坑必看 repo。
-资源链接：https://stable-baselines.readthedocs.io/en/master/
+[大量深度强化学习算法优质实现，文档丰富，包含 Colab Notebook，深度强化学习入坑必看 repo](https://stable-baselines.readthedocs.io/en/master/)
 
 ## OpenAI Spinning Up 
 从 VPG(Vanilla Policy Gradient) 到 TRPO(Trust Region Policy Optimization)、SAC(Soft Actor-Critic) 均有实现，关键是 OpenAI 出品，代码质量高。
@@ -111,8 +110,8 @@ https://github.com/wzyonggege/statistical-learning-method
 《 Hello，算法 》动画图解、能运行、可讨论的数据结构与算法快速入门教程：
 https://github.com/krahets/hello-algo
 # 控制理论和深度学习
-- 【数据驱动控制】Data-Driven Control with Machine Learning/中英字幕
+- [【数据驱动控制】Data-Driven Control with Machine Learning/中英字幕](https://www.bilibili.com/video/BV1HW4y1W7x4/?spm_id_from=333.999.0.0&vd_source=e587bac74600ca53ef886eea337fe87d)
 # Github 开源资料
-[https://github.com/EbookFoundation/free-programming-books?utm_campaign=explore-email&utm_medium=email&utm_source=newsletter&utm_term=weekly]
-https://www.bilibili.com/video/BV1HW4y1W7x4/?spm_id_from=333.999.0.0&vd_source=e587bac74600ca53ef886eea337fe87d
+- [free-programming-books](https://github.com/EbookFoundation/free-programming-books?utm_campaign=explore-email&utm_medium=email&utm_source=newsletter&utm_term=weekly)
+
 
