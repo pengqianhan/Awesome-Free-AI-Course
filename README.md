@@ -112,6 +112,7 @@ https://github.com/wzyonggege/statistical-learning-method
 https://github.com/krahets/hello-algo
 # 控制理论和深度学习
 - 【数据驱动控制】Data-Driven Control with Machine Learning/中英字幕
-
+# Github 开源资料
+[https://github.com/EbookFoundation/free-programming-books?utm_campaign=explore-email&utm_medium=email&utm_source=newsletter&utm_term=weekly]
 https://www.bilibili.com/video/BV1HW4y1W7x4/?spm_id_from=333.999.0.0&vd_source=e587bac74600ca53ef886eea337fe87d
 
