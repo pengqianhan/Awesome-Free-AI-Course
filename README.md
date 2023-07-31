@@ -20,8 +20,7 @@
 
 
 ## 吴恩达深度学习视频课程（中英文字幕）：
-- 吴恩达深度学习视频课程（中英文字幕）：
-https://www.bilibili.com/video/BV164411m79z?p=1（这是第一课，剩下的都在这个UP主投稿页面可以找到）
+- [吴恩达深度学习视频课程（中英文字幕）](https://www.bilibili.com/video/BV164411m79z?p=1)（这是第一课，剩下的都在这个UP主投稿页面可以找到）
 - 配套作业及参考答案：https://blog.csdn.net/u013733326/article/details/79827273
 - 作业知识点：
 https://zhuanlan.zhihu.com/p/95510114
@@ -46,8 +45,8 @@ https://www.bilibili.com/video/BV1TJ411d7b7
 - 吴恩达在线学习资料汇总：https://zhuanlan.zhihu.com/p/108247059
 - 吴恩达机器学习+深度学习笔记：http://www.ai-start.com/；
 https://github.com/fengdu78/machine_learning_beginner
-- 吴恩达机器学习视频课程(机器学习的经典算法，中英文字幕)：
-https://www.bilibili.com/video/BV164411b7dx?from=search&seid=14316316776590275688
+- [吴恩达机器学习视频课程(机器学习的经典算法，中英文字幕)]：
+(https://www.bilibili.com/video/BV164411b7dx?from=search&seid=14316316776590275688)
 https://www.bilibili.com/video/BV19B4y1W76i/?vd_source=e587bac74600ca53ef886eea337fe87d
 - 配套作业及参考答案(zip格式是作业原版，可以下载下来自己先做着，不会了然后看 参考答案)：
 https://github.com/xjwhhh/AndrewNgMachineLearning/tree/master/code
