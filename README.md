@@ -48,6 +48,7 @@ https://www.bilibili.com/video/BV1TJ411d7b7
 https://github.com/fengdu78/machine_learning_beginner
 - 吴恩达机器学习视频课程(机器学习的经典算法，中英文字幕)：
 https://www.bilibili.com/video/BV164411b7dx?from=search&seid=14316316776590275688
+https://www.bilibili.com/video/BV19B4y1W76i/?vd_source=e587bac74600ca53ef886eea337fe87d
 - 配套作业及参考答案(zip格式是作业原版，可以下载下来自己先做着，不会了然后看 参考答案)：
 https://github.com/xjwhhh/AndrewNgMachineLearning/tree/master/code
 - 作业讲解视频：https://www.bilibili.com/video/BV124411A75S?from=search&seid=6955217218497252403&spm_id_from=333.337.0.0
