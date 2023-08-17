@@ -66,7 +66,7 @@ PS. 添加一个2018年的[最新机器学习视频](https://www.bilibili.com/vi
 
 # 李航《统计学习方法》学习资料
 - [视频讲解](https://www.bilibili.com/video/BV1i4411G7Xv)
-- 书中算法变成实现 [1](https://github.com/WenDesi/lihang_book_algorithm) [2](https://github.com/wzyonggege/statistical-learning-method)
+- 书中算法变成实现 [1](https://github.com/WenDesi/lihang_book_algorithm) ,[2](https://github.com/wzyonggege/statistical-learning-method)
 # 张志华机器学习资料
 [视频课程](https://www.bilibili.com/video/BV1jt411b76n)（研究生课程，数学味很浓）
 
@@ -75,33 +75,31 @@ PS. 添加一个2018年的[最新机器学习视频](https://www.bilibili.com/vi
 ## 周博磊强化学习
 - [微信公众号介绍](https://mp.weixin.qq.com/s/-naDSUljr5CriJMWcm_A6A)
 - [github链接](https://github.com/zhoubolei/introRL)
-
 ## 深度强化学习
-- 视频地址：https://www.youtube.com/watch?v=vmkRMvhCW5c&t=51s
-- 课件地址：https://github.com/wangshusen/DRL
+- [视频地址](https://www.youtube.com/watch?v=vmkRMvhCW5c&t=51s)
+- [课件地址](https://github.com/wangshusen/DRL)
 ## Stable Baselines
 [大量深度强化学习算法优质实现，文档丰富，包含 Colab Notebook，深度强化学习入坑必看 repo](https://stable-baselines.readthedocs.io/en/master/)
 
 ## OpenAI Spinning Up 
-从 VPG(Vanilla Policy Gradient) 到 TRPO(Trust Region Policy Optimization)、SAC(Soft Actor-Critic) 均有实现，关键是 OpenAI 出品，代码质量高。
-资源链接：https://openai.com/blog/spinning-up-in-deep-rl/
+从 VPG(Vanilla Policy Gradient) 到 TRPO(Trust Region Policy Optimization)、SAC(Soft Actor-Critic) 均有实现，关键是 OpenAI 出品，代码质量高。[资源链接](https://openai.com/blog/spinning-up-in-deep-rl/)
 
 # 图神经网络资料
-## [《图表示学习》](https://www.cs.mcgill.ca/~wlh/grl_book/)byWilliam L. Hamilton:
+## [《图表示学习》by William L. Hamilton](https://www.cs.mcgill.ca/~wlh/grl_book/)
 ## CS224W 斯坦福图神经网络课程：
-- B站链接：https://www.bilibili.com/video/BV1RZ4y1c7Co/?p=2&spm_id_from=pageDriver&vd_source=e587bac74600ca53ef886eea337fe87d
-- 官网链接：http://web.stanford.edu/class/cs224w/
+- [B站链接](https://www.bilibili.com/video/BV1RZ4y1c7Co/?p=2&spm_id_from=pageDriver&vd_source=e587bac74600ca53ef886eea337fe87d)
+- [官网链接](http://web.stanford.edu/class/cs224w/)
 # 在线工具
 - [AI算法工程师手册](http://www.huaxiaozhuan.com/)
 
 # 数学基础
-- 《矩阵力量》鸢尾花书：从加减乘除到机器学习
-：https://github.com/Visualize-ML/Book4_Power-of-Matrix
+- [《矩阵力量》鸢尾花书：从加减乘除到机器学习](https://github.com/Visualize-ML/Book4_Power-of-Matrix)
 # 计算机学习资料
-- 图解计算机基础：https://xiaolincoding.com/?continueFlag=58e743bc8c677bd168dbe58a10f95ade
-- CS自学指南：https://csdiy.wiki/；https://github.com/PKUFlyingPig/cs-self-learning
-《 Hello，算法 》动画图解、能运行、可讨论的数据结构与算法快速入门教程：
-https://github.com/krahets/hello-algo
+- [图解计算机基础](https://xiaolincoding.com/?continueFlag=58e743bc8c677bd168dbe58a10f95ade)
+- [CS自学指南](https://csdiy.wiki/)；[GitHub链接](https://github.com/PKUFlyingPig/cs-self-learning)
+- [《Hello，算法》动画图解、能运行、可讨论的数据结构与算法快速入门教程](https://github.com/krahets/hello-algo)
+
+
 # 控制理论和深度学习
 - [【数据驱动控制】Data-Driven Control with Machine Learning/中英字幕](https://www.bilibili.com/video/BV1HW4y1W7x4/?spm_id_from=333.999.0.0&vd_source=e587bac74600ca53ef886eea337fe87d)
 # Github 开源资料
