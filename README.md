@@ -5,3 +5,5 @@ This is a repositories about deep learing
 [Transformer](Awesome-Transformer-learning) 是专门针对 Transformer 的学习资料
 
 [从0开始深度学习](从0开始深度学习) 是一个从python入门到用深度学习来解决问题的入门教程
+
+[其他学习笔记](Learning_Notes) 是一个处理具体问题时我自己做的笔记
