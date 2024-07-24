@@ -11,11 +11,15 @@
 - [Transformer Architecture: The Positional Encoding](https://kazemnejad.com/blog/transformer_architecture_positional_encoding/#the-intuition)
 - [详解softmax函数以及相关求导过程](https://zhuanlan.zhihu.com/p/25723112)
 - [Transformer Networks: A mathematical explanation why scaling the dot products leads to more stable gradients](https://towardsdatascience.com/transformer-networks-a-mathematical-explanation-why-scaling-the-dot-products-leads-to-more-stable-414f87391500)
+- [Attention为什么要除以根号d](https://mp.weixin.qq.com/s/3o0NgpFPKS1RNICNuMuygg)
 ## 相关学习资料
 - [From Online Softmax to FlashAttention](https://courses.cs.washington.edu/courses/cse599m/23sp/notes/flashattn.pdf):关于flash attention 的博客
 # Transformer for Vision
 - Dive into deep learning [11.8 Transformers for Vision][https://d2l.ai/chapter_attention-mechanisms-and-transformers/vision-transformer.html]
 - 一篇介绍 Transformer 在计算机视觉的应用(Transformers in Vision)[https://iaml-it.github.io/posts/2021-04-28-transformers-in-vision/]
-
+# 可解释深度学习资料
+- [可解释机器学习公开课](https://www.bilibili.com/video/BV1Se4y1T7dG/?spm_id_from=333.788&vd_source=e587bac74600ca53ef886eea337fe87d):介绍了可解释的基础知识和经典论文
+- [6个机器学习可解释性框架](https://mp.weixin.qq.com/s/GpdOQChETqh9-q0SvP6I0A)
+- [机器之心关于CAV的文章](https://zhuanlan.zhihu.com/p/77528990)
 
 
