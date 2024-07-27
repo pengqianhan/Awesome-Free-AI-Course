@@ -4,7 +4,7 @@
 
 - [gpt_dev_注释版.ipynb] 在 Karpathy 视频里的 google colab 的基础上加了注释和解释
 - [scaling_dot_products.md](scaling_dot_products.md) 是关于 scaling dot products 的数学推导
-- [nanoGPT_train.png](nanoGPT学习笔记\pics\nanoGPT_train.png) 是 nanoGPT 的 模型架构以及维度变换
+- [pics\nanoGPT_train.png](pics\nanoGPT_train.png) 是 nanoGPT 的 模型架构以及维度变换
 
 ![这是 nanoGPT 的训练结构图](pics\nanoGPT_train.png)
 
