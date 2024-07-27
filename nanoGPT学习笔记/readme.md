@@ -6,6 +6,7 @@
 - [scaling_dot_products.md](nanoGPT学习笔记\scaling_dot_products.md) 是关于 scaling dot products 的数学推导
 - [nanoGPT_train.png](nanoGPT学习笔记\pics\nanoGPT_train.png) 是 nanoGPT 的 模型架构以及维度变换
 
+![这是 nanoGPT 的训练结构图](nanoGPT学习笔记\pics\nanoGPT_train.png)
 
 在 Github 发现了一个非常详细的 Repo 大家由需要可以点击跳转 [nanoGPT-Tutorial-CN
 ](https://github.com/cfcys/nanoGPT-Tutorial-CN)
