@@ -1,0 +1,5 @@
+这个文件夹是关于 Andrej Karpathy 在Yoube 的视频 [Let's build GPT: from scratch, in code, spelled out.](https://www.youtube.com/watch?v=kCc8FmEb1nY) 的笔记。
+
+针对视频里所用的 Google colab 我加上了自己的理解和一些补充知识
+
+- [scaling_dot_products.md](nanoGPT学习笔记\scaling_dot_products.md) 是关于 scaling dot products 的数学推导
