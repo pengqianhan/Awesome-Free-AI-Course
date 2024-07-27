@@ -3,3 +3,4 @@
 针对视频里所用的 Google colab 我加上了自己的理解和一些补充知识
 
 - [scaling_dot_products.md](nanoGPT学习笔记\scaling_dot_products.md) 是关于 scaling dot products 的数学推导
+- [nanoGPT_train.png](nanoGPT学习笔记\pics\nanoGPT_train.png) 是 nanoGPT 的 模型架构以及维度变换
