@@ -10,3 +10,10 @@
 
 在 Github 发现了一个非常详细的 Repo 大家由需要可以点击跳转 [nanoGPT-Tutorial-CN
 ](https://github.com/cfcys/nanoGPT-Tutorial-CN)
+
+
+
+其他关于 LLM 从零构建的repo, 以下皆是从大佬的 github fork而来，作为学习资料 
+
+- [LLMs-from-scratch-pq](https://github.com/pengqianhan/LLMs-from-scratch-pq)
+- [llama3-from-scratch-pq](https://github.com/pengqianhan/llama3-from-scratch-pq)
