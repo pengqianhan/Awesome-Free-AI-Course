@@ -1,6 +1,6 @@
 # This folder is some notes
 
-[Tutorial about Survival_analysis](/Survival_analysis)
+[生存分析学习笔记](生存分析.md)
 
 [Notes about Gen AI](/GenAI)
 
