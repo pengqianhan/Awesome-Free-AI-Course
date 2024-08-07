@@ -1,4 +1,4 @@
-
+$softmax(\frac{Q*K^T}{\sqrt{d}})$ 中，当d越小，结果会越趋近one-hot。
 当 $S$ 趋近于 one-hot 时 $\frac{dS}{dZ} $ 趋近于 0， 会引起梯度消失
 ## Softmax 函数求导
 已知 softmax 的输入和输出分别是：$Z=(z1,z2,z3,z4)$,$S=(s1,s2,s3,s4)$
