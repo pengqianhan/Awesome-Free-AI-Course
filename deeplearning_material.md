@@ -76,7 +76,7 @@
 *   [作业讲解视频](https://www.bilibili.com/video/BV124411A75S?from=search\&seid=6955217218497252403\&spm_id_from=333.337.0.0)
     PS. 添加一个2018年的[最新机器学习视频](https://www.bilibili.com/video/BV1fT4y1G7us)，不过只有英文字幕：
 
-# 周志华《机器学习》（西瓜书）学习资料
+## 周志华《机器学习》（西瓜书）学习资料
 
 *   [手推笔记](https://github.com/Sophia-11/Machine-Learning-Notes/blob/master/README.md)
 
@@ -84,7 +84,7 @@
 
 *   [视频讲解](https://www.bilibili.com/video/BV1wx411o7CK?from=search\&seid=17517376841893921543)
 
-# 台大李宏毅机器学习资料
+## 台大李宏毅机器学习资料
 
 *   B站视频链接：
     [2020年视频](https://www.bilibili.com/video/BV1JE411g7XF?p=1)
@@ -92,25 +92,26 @@
 
 *   [官网地址](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
-# [徐亦达老师机器学习教程](https://github.com/roboticcam/machine-learning-notes)
+## [徐亦达老师机器学习教程](https://github.com/roboticcam/machine-learning-notes)
 
-# 李航《统计学习方法》学习资料
+## 李航《统计学习方法》学习资料
 
 *   [视频讲解](https://www.bilibili.com/video/BV1i4411G7Xv)
 
 *   书中算法变成实现 [1](https://github.com/WenDesi/lihang_book_algorithm) ,[2](https://github.com/wzyonggege/statistical-learning-method)
 
-# 张志华机器学习资料
+## 张志华机器学习资料
 
-[视频课程](https://www.bilibili.com/video/BV1jt411b76n)（研究生课程，数学味很浓）
+* [视频课程](https://www.bilibili.com/video/BV1jt411b76n)（研究生课程，数学味很浓）
 
 # 强化学习资料
 
-## 周博磊强化学习
 
-*   [微信公众号介绍](https://mp.weixin.qq.com/s/-naDSUljr5CriJMWcm_A6A)
 
-*   [github链接](https://github.com/zhoubolei/introRL)
+* 周博磊强化学习 [微信公众号介绍](https://mp.weixin.qq.com/s/-naDSUljr5CriJMWcm_A6A),  [github链接](https://github.com/zhoubolei/introRL), [B站视频](https://www.bilibili.com/video/BV1LE411G7Xj/?spm_id_from=333.999.0.0&vd_source=e587bac74600ca53ef886eea337fe87d)
+*   [OpenAI Spinning Up](https://openai.com/blog/spinning-up-in-deep-rl/) ：从 VPG(Vanilla Policy Gradient) 到 TRPO(Trust Region Policy Optimization)、SAC(Soft Actor-Critic) 均有实现，关键是 OpenAI 出品，代码质量高。
+
+* [Stable Baselines](https://stable-baselines.readthedocs.io/en/master/)：大量深度强化学习算法优质实现，文档丰富，包含 Colab Notebook，深度强化学习入坑必看 repo。
 
 ## 深度强化学习
 
