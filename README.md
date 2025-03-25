@@ -1,7 +1,7 @@
 🌟这里收集了一些深度学习的学习资料，也有一些我自己的学习笔记
 
 - [nanoGPT学习笔记](nanoGPT学习笔记) 是关于 Andrej Karpathy  nanoGPT 的学习笔记 
-- [深度学习资料合集](deeplearning_material.md) 是所有深度学习资料的合集，不定期更新，大家可以按需使用。
+- [深度学习资料合集](deeplearning_material.md) 是所有 Python 和深度学习资料的合集，不定期更新，大家可以按需使用。
 
 - [Transformer](Awesome-Transformer-learning) 是专门针对 Transformer 的学习资料
 
