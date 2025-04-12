@@ -43,23 +43,16 @@ $\lambda(t|X) = \lambda_0(t) \cdot \text{effect of covariates}$
 
 ## Slide 4: Cox Proportional Hazards Model
 - **Introduced by**: Sir David Cox (1972).
-- **Form**: For covariates $X_i = (X_{i1}, \dots, X_{ip})$:  
-  $\lambda(t|X_i) = \lambda_0(t) \exp(\beta_1 X_{i1} + \cdots + \beta_p X_{ip}) = \lambda_0(t) \exp(X_i \cdot \beta)$
+- **Form**: For covariates $X = (X_{1}, \dots, X_{p})$:  
+  $\lambda(t|X) = \lambda_0(t) \exp(\beta_1 X_{1} + \cdots + \beta_p X_{p}) = \lambda_0(t) \exp(X \cdot \beta)$
 - **Key Feature**: Estimates $\beta$ without specifying $\lambda_0(t)$.
 - **Hazard Ratio**:  
   $\frac{\lambda(t|X_i)}{\lambda(t|X_j)} = \exp((X_i - X_j) \cdot \beta)$.
 
 ------
-## Slide 3: Example: Binary Covariate (Hospital)
-- **Data**: Survival post-surgery (A vs. B).
-- Model: $\lambda(t|X_i) = \lambda_0(t) \exp(\beta_1 X_i)$, $X_i = 1$ (A), $0$ (B).
-- Estimate: $\beta_1 = 2.12$.
-- Hazard Ratio: $\exp(2.12) = 8.32$.
-- **Interpretation**: Hospital A has 8.3x higher risk than B.
 
----
 
-## Slide 4: Absence of Intercept Term
+## Slide 5: Absence of Intercept Term
 - Typical regression: Includes intercept $\beta_0$.
 - Cox model: $\lambda_0(t)$ absorbs intercept.
 - If $\beta_0$ added:  
@@ -68,7 +61,16 @@ $\lambda(t|X) = \lambda_0(t) \cdot \text{effect of covariates}$
 
 ---
 
-## Slide 5: Extensions and Variations
+## Slide 6: Example: Binary Covariate (Hospital)
+- **Data**: Survival post-surgery (A vs. B).
+- Model: $\lambda(t|X_i) = \lambda_0(t) \exp(\beta_1 X_i)$, $X_i = 1$ (A), $0$ (B).
+- Estimate: $\beta_1 = 2.12$.
+- Hazard Ratio: $\exp(2.12) = 8.32$.
+- **Interpretation**: Hospital A has 8.3x higher risk than B.
+
+---
+
+## Slide 7: Extensions and Variations
 - **Time-Varying Covariates**: $\lambda(t|X_i(t))$.
 - **Time-Varying Coefficients**: $\beta(t)$.
 - **Parametric Models**: Specify $\lambda_0(t)$ (e.g., Weibull).
@@ -76,7 +78,7 @@ $\lambda(t|X) = \lambda_0(t) \cdot \text{effect of covariates}$
 
 ---
 
-## Slide 6: Software Implementations
+## Slide 8: Software Implementations
 - R: `coxph()` (survival package).
 - Python: `CoxPHFitter` (lifelines).
 - SAS: `phreg`.
