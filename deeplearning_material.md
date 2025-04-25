@@ -92,7 +92,8 @@
 
 *   [官网地址](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
-## [徐亦达老师机器学习教程](https://github.com/roboticcam/machine-learning-notes)
+## 徐亦达老师机器学习教程
+* [Github 地址](https://github.com/roboticcam/machine-learning-notes)
 
 ## 李航《统计学习方法》学习资料
 
@@ -106,7 +107,9 @@
 
 # 强化学习资料
 
-
+## 西湖大学【强化学习的数学原理】课程：从零开始到透彻理解
+* [视频地址](https://www.bilibili.com/video/BV1sd4y167NS/?spm_id_from=333.1387.0.0&vd_source=e587bac74600ca53ef886eea337fe87d)
+* [Github](https://github.com/MathFoundationRL/Book-Mathmatical-Foundation-of-Reinforcement-Learning)
 
 * 周博磊强化学习 [微信公众号介绍](https://mp.weixin.qq.com/s/-naDSUljr5CriJMWcm_A6A),  [github链接](https://github.com/zhoubolei/introRL), [B站视频](https://www.bilibili.com/video/BV1LE411G7Xj/?spm_id_from=333.999.0.0&vd_source=e587bac74600ca53ef886eea337fe87d)
 *   [OpenAI Spinning Up](https://openai.com/blog/spinning-up-in-deep-rl/) ：从 VPG(Vanilla Policy Gradient) 到 TRPO(Trust Region Policy Optimization)、SAC(Soft Actor-Critic) 均有实现，关键是 OpenAI 出品，代码质量高。
@@ -119,17 +122,11 @@
 
 *   [课件地址](https://github.com/wangshusen/DRL)
 
-## Stable Baselines
-
-[大量深度强化学习算法优质实现，文档丰富，包含 Colab Notebook，深度强化学习入坑必看 repo](https://stable-baselines.readthedocs.io/en/master/)
-
-## OpenAI Spinning Up
-
-从 VPG(Vanilla Policy Gradient) 到 TRPO(Trust Region Policy Optimization)、SAC(Soft Actor-Critic) 均有实现，关键是 OpenAI 出品，代码质量高。[资源链接](https://openai.com/blog/spinning-up-in-deep-rl/)
 
 # 图神经网络资料
 
-## [《图表示学习》by William L. Hamilton](https://www.cs.mcgill.ca/~wlh/grl_book/)
+## 《图表示学习》by William L. Hamilton
+* [链接](https://www.cs.mcgill.ca/~wlh/grl_book/)
 
 ## CS224W 斯坦福图神经网络课程：
 
