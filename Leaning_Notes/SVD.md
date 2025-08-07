@@ -1,0 +1,3 @@
+Discovering governing equations from data: 这篇文章中的 Equation (16) 和 EigenTrajectory: Low-Rank Descriptors for Multi-Modal Trajectory Forecasting 中的 Equation (2) 都用到了SVD，通过特征值来降低维度，从而转换到另一个空间，或者对处理的变量进行了转换。
+
+https://g.co/gemini/share/fed7503efa4c
