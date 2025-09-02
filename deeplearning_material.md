@@ -133,6 +133,12 @@
 *   [B站链接](https://www.bilibili.com/video/BV1RZ4y1c7Co/?p=2\&spm_id_from=pageDriver\&vd_source=e587bac74600ca53ef886eea337fe87d)
 
 *   [官网链接](http://web.stanford.edu/class/cs224w/)
+# LLM 学习资料
+## 从零开始构建LLM
+* [Cortex](https://github.com/qibin0506/Cortex):个人构建MoE大模型：从预训练到DPO的完整实践
+* [Minimind](https://github.com/jingyaogong/minimind):🚀🚀 「大模型」2小时完全从0训练26M的小参数GPT！🌏 Train a 26M-parameter GPT from scratch in just 2h!
+* [LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch/tree/main):Implement a ChatGPT-like LLM in PyTorch from scratch, step by step by Sebastian Raschka(rasbt)
+
 
 # 在线工具
 
