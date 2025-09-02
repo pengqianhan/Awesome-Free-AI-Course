@@ -8,6 +8,7 @@
 5. [训练过程](#训练过程)
 6. [完整代码示例](#完整代码示例)
 7. [应用与扩展](#应用与扩展)
+8. [参考文献](#参考文献)
 
 ## 什么是VQ-VAE
 
@@ -413,3 +414,7 @@ VQ-VAE通过巧妙的设计解决了连续表示到离散表示的转换问题�
 - **可扩展性**：易于与其他架构结合
 
 VQ-VAE不仅是一个优秀的生成模型，更是连接连续信号处理和离散序列建模的桥梁，在现代AI系统中发挥着重要作用。
+
+## 参考文献
+- [Understanding Vector Quantization in VQ-VAE](https://huggingface.co/blog/ariG23498/understand-vq)
+- [variational-image-models](https://github.com/ariG23498/variational-image-models/tree/main)
