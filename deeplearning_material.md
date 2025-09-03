@@ -139,6 +139,11 @@
 * [Minimind](https://github.com/jingyaogong/minimind):🚀🚀 「大模型」2小时完全从0训练26M的小参数GPT！🌏 Train a 26M-parameter GPT from scratch in just 2h!
 * [LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch/tree/main):Implement a ChatGPT-like LLM in PyTorch from scratch, step by step by Sebastian Raschka(rasbt)
 
+# Diffusion Model and flow-based model
+## Introduction
+* [Introduction to Flow Matching and Diffusion Models:MIT Computer Science Class 6.S184: Generative AI with Stochastic Differential Equations](https://diffusion.csail.mit.edu/)
+* [Introduction to Flow Matching and Diffusion Models:paper](https://arxiv.org/abs/2506.02070)
+
 
 # 在线工具
 
