@@ -180,13 +180,15 @@ class VQVAE(nn.Module):
     
     def forward(self, x):
         # 编码: 图像 -> 连续特征
+        # print('x.shape:',x.shape)# torch.Size([128, 3, 32, 32])
         z_e = self.encoder(x)
-        
+        # print('z_e.shape:',z_e.shape) # z_e.shape: torch.Size([128, 128, 4, 4])
         # 量化: 连续特征 -> 离散特征
         z_q, vq_loss, encoding_indices = self.vq_layer(z_e)
-        
+        # print('z_q.shape:',z_q.shape)# z_q.shape: torch.Size([128, 128, 4, 4])
         # 解码: 离散特征 -> 重构图像
         x_recon = self.decoder(z_q)
+        # print('x_recon.shape:',x_recon.shape)# x_recon.shape: torch.Size([128, 3, 32, 32])
         
         return x_recon, vq_loss
 ```
@@ -205,136 +207,26 @@ class VQVAE(nn.Module):
 
 #### 数据流示例
 ```
-输入图像: [1, 3, 256, 256]
+输入图像: [128, 3, 32, 32]
     ↓ 编码器
-连续特征: [1, 64, 32, 32]
+连续特征: [128, 128, 4, 4]
     ↓ VQ层
-离散特征: [1, 64, 32, 32] (量化后)
+离散特征: [128, 128, 4, 4] (量化后)
     ↓ 解码器
-重构图像: [1, 3, 256, 256]
+重构图像: [128, 3, 32, 32]
 ```
 
 ## 训练过程
 
 ### 总损失函数
 ```python
-def compute_loss(x, x_recon, vq_loss):
-    # 重构损失: 衡量重构质量
-    recon_loss = F.mse_loss(x_recon, x)
-    
-    # 总损失 = 重构损失 + VQ损失
-    total_loss = recon_loss + vq_loss
-    
-    return total_loss, recon_loss, vq_loss
-```
-
-### 训练循环
-```python
-def train_epoch(model, dataloader, optimizer, device):
-    model.train()
-    total_loss = 0
-    total_recon_loss = 0
-    total_vq_loss = 0
-    
-    for batch_idx, (data, _) in enumerate(dataloader):
-        data = data.to(device)
-        optimizer.zero_grad()
-        
-        # 前向传播
-        x_recon, vq_loss = model(data)
-        
-        # 计算损失
-        total_loss_batch, recon_loss, vq_loss_item = compute_loss(data, x_recon, vq_loss)
-        
-        # 反向传播
-        total_loss_batch.backward()
-        optimizer.step()
-        
-        # 记录损失
-        total_loss += total_loss_batch.item()
-        total_recon_loss += recon_loss.item()
-        total_vq_loss += vq_loss_item.item()
-        
-        if batch_idx % 100 == 0:
-            print(f'Batch {batch_idx}, Loss: {total_loss_batch.item():.4f}')
-    
-    return total_loss/len(dataloader), total_recon_loss/len(dataloader), total_vq_loss/len(dataloader)
+def vqvae_loss(recon_x, x, vq_loss):
+    recon_loss = F.mse_loss(recon_x, x)
+    return recon_loss + vq_loss
 ```
 
 ## 完整代码示例
-
-```python
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-from torch.utils.data import DataLoader
-from torchvision import datasets, transforms
-import matplotlib.pyplot as plt
-
-# 超参数设置
-batch_size = 64
-learning_rate = 1e-3
-num_epochs = 50
-latent_dim = 64
-num_embeddings = 512
-commitment_cost = 0.25
-
-# 数据预处理
-transform = transforms.Compose([
-    transforms.Resize((128, 128)),
-    transforms.ToTensor(),
-    transforms.Normalize((0.5,), (0.5,))  # 归一化到[-1, 1]
-])
-
-# 数据加载（以CIFAR-10为例）
-train_dataset = datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-
-# 模型初始化
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = VQVAE(channels=3, latent_dim=latent_dim, num_embeddings=num_embeddings).to(device)
-optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-
-# 训练循环
-for epoch in range(num_epochs):
-    avg_loss, avg_recon_loss, avg_vq_loss = train_epoch(model, train_loader, optimizer, device)
-    
-    print(f'Epoch {epoch+1}/{num_epochs}:')
-    print(f'  Total Loss: {avg_loss:.4f}')
-    print(f'  Recon Loss: {avg_recon_loss:.4f}')
-    print(f'  VQ Loss: {avg_vq_loss:.4f}')
-    
-    # 可视化重构结果
-    if (epoch + 1) % 10 == 0:
-        model.eval()
-        with torch.no_grad():
-            # 取一个batch进行重构
-            data, _ = next(iter(train_loader))
-            data = data.to(device)
-            x_recon, _ = model(data)
-            
-            # 显示原始图像和重构图像
-            fig, axes = plt.subplots(2, 8, figsize=(16, 4))
-            for i in range(8):
-                # 原始图像
-                axes[0, i].imshow(data[i].cpu().permute(1, 2, 0) * 0.5 + 0.5)
-                axes[0, i].set_title('Original')
-                axes[0, i].axis('off')
-                
-                # 重构图像
-                axes[1, i].imshow(x_recon[i].cpu().permute(1, 2, 0) * 0.5 + 0.5)
-                axes[1, i].set_title('Reconstructed')
-                axes[1, i].axis('off')
-            
-            plt.tight_layout()
-            plt.savefig(f'reconstruction_epoch_{epoch+1}.png')
-            plt.close()
-        
-        model.train()
-
-print('训练完成！')
-```
+[colab](https://drive.google.com/file/d/1L770708CG1t_4rrzMNbIesOuveManUE_/view?usp=sharing)
 
 ## 应用与扩展
 
