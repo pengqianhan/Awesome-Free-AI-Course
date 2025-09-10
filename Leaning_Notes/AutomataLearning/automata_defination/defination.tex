@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx} % Required for \triangleq if not using amssymb
+
+% For a more professional look, adjust margins
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\section*{Definition of a Hybrid Automaton}
+
+A hybrid automaton is a widely adopted formalism to characterize discrete-continuous behaviors of hybrid systems. It extends finite-state machines by associating each discrete location with a vector of continuously evolving dynamics, subject to discrete jumps upon transitions.
+
+An n-dimensional hybrid automaton is defined as a sextuple:
+$$ H \triangleq (Q, V, F, \text{Inv}, \text{Init}, T) $$
+where:
+\begin{itemize}
+    \item \textbf{$Q = \{q_1, q_2, \dots, q_j\}$} is a finite set of discrete modes representing the discrete states of H.
+    
+    \item \textbf{$V = X \otimes U$} is a finite set of continuous variables. It consists of:
+    \begin{itemize}
+        \item (observable) output variables \textbf{$X = \{x_1, x_2, \dots, x_n\}$}
+        \item (controllable) input variables \textbf{$U = \{u_1, u_2, \dots, u_m\}$}
+        \item A real-valued vector $v \in \mathbb{R}^{n+m}$ denotes a continuous state. The overall state space is $Q \times \mathbb{R}^{n+m}$.
+    \end{itemize}
+    
+    \item \textbf{$F = \{F_q\}_{q \in Q}$} assigns a flow function $F_q$ to each mode $q$, characterizing the change of output variables $X$ over inputs $U$.
+    
+    \item \textbf{Inv $\subseteq Q \times \mathbb{R}^{n+m}$} specifies the mode invariants representing admissible states of H.
+    
+    \item \textbf{Init $\subseteq$ Inv} is the initial condition defining admissible initial states.
+    
+    \item \textbf{$T \subseteq Q \times G \times R \times Q$} is the set of transition relations between modes, where:
+    \begin{itemize}
+        \item \textbf{$G$} is a set of guards $g \subseteq \mathbb{R}^{n+m}$.
+        \item \textbf{$R$} is a set of resets (updates) $r: \mathbb{R}^{n+m} \to \mathbb{R}^n$. A transition is triggered immediately when its guard is active.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simple version of hybrid automaton}
+A hybrid automaton is a widely adopted formalism to characterize discrete-continuous behaviors of hybrid systems. It extends finite-state machines by associating each discrete location with a vector of continuously evolving dynamics, subject to discrete jumps upon transitions.
+
+An n-dimensional hybrid automaton is defined as a sextuple:
+$$ H \triangleq (Q, V, F, \text{Inv}, \text{Init}, T) $$
+where:
+\begin{itemize}
+    \item \textbf{$Q = \{q_1, q_2, \dots, q_j\}$} is a finite set of discrete modes representing the discrete states of H.
+    
+    \item \textbf{$V = X \otimes U$} is a finite set of continuous variables. It consists of:
+    \begin{itemize}
+        \item (observable) output variables \textbf{$X = \{x_1, x_2, \dots, x_n\}$}
+        \item (controllable) input variables \textbf{$U = \{u_1, u_2, \dots, u_m\}$}
+        \item A real-valued vector $v \in \mathbb{R}^{n+m}$ denotes a continuous state. The overall state space is $Q \times \mathbb{R}^{n+m}$.
+    \end{itemize}
+    
+    \item \textbf{$F = \{F_q\}_{q \in Q}$} assigns a flow function $F_q$ to each mode $q$, characterizing the change of output variables $X$ over inputs $U$.
+    
+    \item \textbf{Inv $\subseteq Q \times \mathbb{R}^{n+m}$} specifies the mode invariants representing admissible states of H.
+    
+    \item \textbf{Init $\subseteq$ Inv} is the initial condition defining admissible initial states.
+    
+    \item \textbf{$T \subseteq Q \times G \times R \times Q$} is the set of transition relations between modes, where:
+    \begin{itemize}
+        \item \textbf{$G$} is a set of guards $g \subseteq \mathbb{R}^{n+m}$.
+        \item \textbf{$R$} is a set of resets (updates) $r: \mathbb{R}^{n+m} \to \mathbb{R}^n$. A transition is triggered immediately when its guard is active.
+    \end{itemize}
+\end{itemize}
+
+
+\end{document}
