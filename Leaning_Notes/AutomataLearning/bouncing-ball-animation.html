@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball - Hybrid Automaton Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 1400px;
+            width: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .visualization-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .animation-panel {
+            width: 100%;
+        }
+        
+        .plots-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        svg {
+            width: 100%;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: white;
+        }
+        
+        #animation-svg {
+            height: 400px;
+            background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 70%, #f0f0f0 70%, #d0d0d0 100%);
+        }
+        
+        .plot-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        
+        .plot-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .info-panel {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #666;
+        }
+        
+        .info-value {
+            color: #333;
+            font-family: monospace;
+        }
+        
+        .ground-line {
+            stroke: #8B4513;
+            stroke-width: 3;
+            stroke-dasharray: 10, 5;
+        }
+        
+        .plot-title {
+            font-size: 16px;
+            font-weight: bold;
+            fill: #333;
+        }
+        
+        .axis {
+            stroke: #333;
+            stroke-width: 2;
+        }
+        
+        .axis-label {
+            font-size: 11px;
+            fill: #666;
+        }
+        
+        .axis-value {
+            font-size: 10px;
+            fill: #666;
+        }
+        
+        .grid-line {
+            stroke: #e0e0e0;
+            stroke-width: 0.5;
+            stroke-dasharray: 2, 2;
+        }
+        
+        .plot-line {
+            fill: none;
+            stroke-width: 2.5;
+        }
+        
+        .height-line {
+            stroke: #4CAF50;
+        }
+        
+        .velocity-line {
+            stroke: #2196F3;
+        }
+        
+        .zero-line {
+            stroke: #ff6b6b;
+            stroke-width: 1.5;
+            stroke-dasharray: 5, 3;
+        }
+        
+        @media (max-width: 1024px) {
+            .plots-panel {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bouncing Ball Simulation</h1>
+        <div class="subtitle">Hybrid Automaton Model with Gravity and Energy Loss</div>
+        
+        <div class="visualization-container">
+            <div class="animation-panel">
+                <svg id="animation-svg">
+                    <!-- Ground line -->
+                    <line x1="0" y1="350" x2="100%" y2="350" class="ground-line"/>
+                    
+                    <!-- Ground texture -->
+                    <rect x="0" y="350" width="100%" height="50" fill="#8B7355" opacity="0.3"/>
+                    
+                    <!-- Ball shadow -->
+                    <ellipse id="shadow" cx="50%" cy="350" rx="20" ry="5" fill="black" opacity="0.2"/>
+                    
+                    <!-- Ball -->
+                    <circle id="ball" cx="50%" cy="50" r="20" fill="url(#ballGradient)"/>
+                    
+                    <!-- Gradient for ball -->
+                    <defs>
+                        <radialGradient id="ballGradient">
+                            <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#c92a2a;stop-opacity:1" />
+                        </radialGradient>
+                        
+                        <!-- Glow effect -->
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Trajectory trace -->
+                    <g id="trajectory"></g>
+                </svg>
+            </div>
+            
+            <div class="plots-panel">
+                <!-- Height Plot Container -->
+                <div class="plot-container">
+                    <svg id="height-plot" class="plot-svg" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet">
+                        <text x="250" y="25" text-anchor="middle" class="plot-title">Height vs Time</text>
+                        
+                        <!-- Plot area background -->
+                        <rect x="60" y="40" width="420" height="200" fill="#fafafa" stroke="none"/>
+                        
+                        <!-- Grid -->
+                        <g id="height-grid"></g>
+                        
+                        <!-- Axes -->
+                        <line x1="60" y1="40" x2="60" y2="240" class="axis"/>
+                        <line x1="60" y1="240" x2="480" y2="240" class="axis"/>
+                        
+                        <!-- Y-axis labels -->
+                        <g id="height-y-labels"></g>
+                        
+                        <!-- X-axis labels -->
+                        <g id="height-x-labels"></g>
+                        
+                        <!-- Axis titles -->
+                        <text x="30" y="140" text-anchor="middle" class="axis-label" transform="rotate(-90 30 140)">Height (m)</text>
+                        <text x="270" y="270" text-anchor="middle" class="axis-label">Time (s)</text>
+                        
+                        <!-- Clipping path for plot area -->
+                        <defs>
+                            <clipPath id="height-clip">
+                                <rect x="60" y="40" width="420" height="200"/>
+                            </clipPath>
+                        </defs>
+                        
+                        <!-- Plot line -->
+                        <g clip-path="url(#height-clip)">
+                            <polyline id="height-line" class="plot-line height-line" points=""/>
+                        </g>
+                    </svg>
+                </div>
+                
+                <!-- Velocity Plot Container -->
+                <div class="plot-container">
+                    <svg id="velocity-plot" class="plot-svg" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet">
+                        <text x="250" y="25" text-anchor="middle" class="plot-title">Velocity vs Time</text>
+                        
+                        <!-- Plot area background -->
+                        <rect x="60" y="40" width="420" height="200" fill="#fafafa" stroke="none"/>
+                        
+                        <!-- Grid -->
+                        <g id="velocity-grid"></g>
+                        
+                        <!-- Axes -->
+                        <line x1="60" y1="40" x2="60" y2="240" class="axis"/>
+                        <line x1="60" y1="240" x2="480" y2="240" class="axis"/>
+                        
+                        <!-- Zero line -->
+                        <line id="velocity-zero-line" x1="60" y1="140" x2="480" y2="140" class="zero-line"/>
+                        
+                        <!-- Y-axis labels -->
+                        <g id="velocity-y-labels"></g>
+                        
+                        <!-- X-axis labels -->
+                        <g id="velocity-x-labels"></g>
+                        
+                        <!-- Axis titles -->
+                        <text x="30" y="140" text-anchor="middle" class="axis-label" transform="rotate(-90 30 140)">Velocity (m/s)</text>
+                        <text x="270" y="270" text-anchor="middle" class="axis-label">Time (s)</text>
+                        
+                        <!-- Clipping path for plot area -->
+                        <defs>
+                            <clipPath id="velocity-clip">
+                                <rect x="60" y="40" width="420" height="200"/>
+                            </clipPath>
+                        </defs>
+                        
+                        <!-- Plot line -->
+                        <g clip-path="url(#velocity-clip)">
+                            <polyline id="velocity-line" class="plot-line velocity-line" points=""/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button onclick="startAnimation()">Start</button>
+            <button onclick="pauseAnimation()">Pause</button>
+            <button onclick="resetAnimation()">Reset</button>
+            <button onclick="changeInitialConditions()">Random Initial</button>
+            <button onclick="clearPlots()">Clear Plots</button>
+        </div>
+        
+        <div class="info-panel">
+            <strong>System Parameters:</strong>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Gravity (g):</span>
+                    <span class="info-value">9.81 m/s²</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Rebound Factor (γ):</span>
+                    <span class="info-value">0.9</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Position (y):</span>
+                    <span class="info-value" id="position">3.00 m</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Velocity (v):</span>
+                    <span class="info-value" id="velocity">0.00 m/s</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Time:</span>
+                    <span class="info-value" id="time">0.00 s</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Bounces:</span>
+                    <span class="info-value" id="bounces">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Hybrid Automaton Parameters
+        const g = 9.81;  // gravity
+        const gamma = 0.9;  // rebound factor
+        const dt = 0.002;  // smaller time step for more accuracy
+        const groundY = 350;  // ground position in SVG coordinates
+        const ballRadius = 20;
+        const maxHeight = 300;  // maximum height in pixels
+        const heightScale = 100;  // pixels per meter
+        
+        // State variables
+        let y = 3.0;  // initial height in meters
+        let v = 0.0;  // initial velocity in m/s
+        let time = 0;
+        let bounceCount = 0;
+        let animationId = null;
+        let isPaused = false;
+        let trajectoryPoints = [];
+        
+        // Plot data
+        let heightData = [];
+        let velocityData = [];
+        const plotTimeWindow = 10;  // seconds visible in plot
+        
+        // Plot dimensions (in SVG viewBox coordinates)
+        const plotLeft = 60;
+        const plotRight = 480;
+        const plotTop = 40;
+        const plotBottom = 240;
+        const plotWidth = plotRight - plotLeft;
+        const plotHeight = plotBottom - plotTop;
+        
+        // Plot ranges
+        let maxHeightSeen = 3.5;
+        let maxVelocitySeen = 10;
+        
+        // Initialize grid and labels
+        function initializePlots() {
+            // Initialize height plot
+            updateHeightGrid();
+            updateVelocityGrid();
+        }
+        
+        function updateHeightGrid() {
+            const heightGrid = document.getElementById('height-grid');
+            const heightYLabels = document.getElementById('height-y-labels');
+            const heightXLabels = document.getElementById('height-x-labels');
+            
+            // Clear existing
+            heightGrid.innerHTML = '';
+            heightYLabels.innerHTML = '';
+            heightXLabels.innerHTML = '';
+            
+            // Y-axis grid and labels (6 lines)
+            for (let i = 0; i <= 5; i++) {
+                const y = plotTop + (plotHeight / 5) * i;
+                const value = maxHeightSeen * (1 - i / 5);
+                
+                // Grid line
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', plotLeft);
+                line.setAttribute('y1', y);
+                line.setAttribute('x2', plotRight);
+                line.setAttribute('y2', y);
+                line.setAttribute('class', 'grid-line');
+                heightGrid.appendChild(line);
+                
+                // Label
+                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                label.setAttribute('x', plotLeft - 5);
+                label.setAttribute('y', y + 3);
+                label.setAttribute('text-anchor', 'end');
+                label.setAttribute('class', 'axis-value');
+                label.textContent = value.toFixed(1);
+                heightYLabels.appendChild(label);
+            }
+            
+            // X-axis grid and labels
+            for (let i = 0; i <= 10; i++) {
+                const x = plotLeft + (plotWidth / 10) * i;
+                const timeValue = (time > plotTimeWindow) ? 
+                    (time - plotTimeWindow + (plotTimeWindow / 10) * i) : 
+                    (plotTimeWindow / 10) * i;
+                
+                // Grid line
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', x);
+                line.setAttribute('y1', plotTop);
+                line.setAttribute('x2', x);
+                line.setAttribute('y2', plotBottom);
+                line.setAttribute('class', 'grid-line');
+                heightGrid.appendChild(line);
+                
+                // Label (every other line)
+                if (i % 2 === 0) {
+                    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    label.setAttribute('x', x);
+                    label.setAttribute('y', plotBottom + 15);
+                    label.setAttribute('text-anchor', 'middle');
+                    label.setAttribute('class', 'axis-value');
+                    label.textContent = timeValue.toFixed(1);
+                    heightXLabels.appendChild(label);
+                }
+            }
+        }
+        
+        function updateVelocityGrid() {
+            const velocityGrid = document.getElementById('velocity-grid');
+            const velocityYLabels = document.getElementById('velocity-y-labels');
+            const velocityXLabels = document.getElementById('velocity-x-labels');
+            
+            // Clear existing
+            velocityGrid.innerHTML = '';
+            velocityYLabels.innerHTML = '';
+            velocityXLabels.innerHTML = '';
+            
+            // Y-axis grid and labels
+            for (let i = 0; i <= 5; i++) {
+                const y = plotTop + (plotHeight / 5) * i;
+                const value = maxVelocitySeen * (1 - 2 * i / 5);
+                
+                // Grid line
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', plotLeft);
+                line.setAttribute('y1', y);
+                line.setAttribute('x2', plotRight);
+                line.setAttribute('y2', y);
+                line.setAttribute('class', 'grid-line');
+                velocityGrid.appendChild(line);
+                
+                // Label
+                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                label.setAttribute('x', plotLeft - 5);
+                label.setAttribute('y', y + 3);
+                label.setAttribute('text-anchor', 'end');
+                label.setAttribute('class', 'axis-value');
+                label.textContent = value.toFixed(1);
+                velocityYLabels.appendChild(label);
+            }
+            
+            // Update zero line position
+            const zeroY = plotTop + plotHeight * (maxVelocitySeen / (2 * maxVelocitySeen));
+            document.getElementById('velocity-zero-line').setAttribute('y1', zeroY);
+            document.getElementById('velocity-zero-line').setAttribute('y2', zeroY);
+            
+            // X-axis grid and labels
+            for (let i = 0; i <= 10; i++) {
+                const x = plotLeft + (plotWidth / 10) * i;
+                const timeValue = (time > plotTimeWindow) ? 
+                    (time - plotTimeWindow + (plotTimeWindow / 10) * i) : 
+                    (plotTimeWindow / 10) * i;
+                
+                // Grid line
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', x);
+                line.setAttribute('y1', plotTop);
+                line.setAttribute('x2', x);
+                line.setAttribute('y2', plotBottom);
+                line.setAttribute('class', 'grid-line');
+                velocityGrid.appendChild(line);
+                
+                // Label (every other line)
+                if (i % 2 === 0) {
+                    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    label.setAttribute('x', x);
+                    label.setAttribute('y', plotBottom + 15);
+                    label.setAttribute('text-anchor', 'middle');
+                    label.setAttribute('class', 'axis-value');
+                    label.textContent = timeValue.toFixed(1);
+                    velocityXLabels.appendChild(label);
+                }
+            }
+        }
+        
+        // Convert physical coordinates to SVG coordinates
+        function toSVGY(physicalY) {
+            return groundY - ballRadius - (physicalY * heightScale);
+        }
+        
+        // Convert plot values to SVG coordinates
+        function toPlotX(t) {
+            const minTime = Math.max(0, time - plotTimeWindow);
+            const maxTime = minTime + plotTimeWindow;
+            const normalizedT = (t - minTime) / (maxTime - minTime);
+            return plotLeft + normalizedT * plotWidth;
+        }
+        
+        function toHeightPlotY(h) {
+            const normalizedH = h / maxHeightSeen;
+            return plotBottom - normalizedH * plotHeight;
+        }
+        
+        function toVelocityPlotY(vel) {
+            const normalizedV = (vel + maxVelocitySeen) / (2 * maxVelocitySeen);
+            return plotBottom - normalizedV * plotHeight;
+        }
+        
+        // Update plots
+        function updatePlots() {
+            // Add current data point with higher sampling rate
+            if (heightData.length === 0 || time - heightData[heightData.length - 1].t > 0.01) {
+                heightData.push({t: time, value: y});
+                velocityData.push({t: time, value: v});
+            }
+            
+            // Update max values if needed
+            if (y > maxHeightSeen * 0.9) {
+                maxHeightSeen = y * 1.2;
+                updateHeightGrid();
+            }
+            if (Math.abs(v) > maxVelocitySeen * 0.9) {
+                maxVelocitySeen = Math.abs(v) * 1.2;
+                updateVelocityGrid();
+            }
+            
+            // Keep reasonable amount of data
+            const maxDataPoints = 2000;
+            if (heightData.length > maxDataPoints) {
+                heightData = heightData.slice(-maxDataPoints);
+                velocityData = velocityData.slice(-maxDataPoints);
+            }
+            
+            // Filter data to visible time window
+            const minTime = Math.max(0, time - plotTimeWindow);
+            const visibleHeightData = heightData.filter(d => d.t >= minTime);
+            const visibleVelocityData = velocityData.filter(d => d.t >= minTime);
+            
+            // Update height plot
+            if (visibleHeightData.length > 0) {
+                const heightLine = document.getElementById('height-line');
+                const heightPoints = visibleHeightData.map(d => 
+                    `${toPlotX(d.t)},${toHeightPlotY(d.value)}`
+                ).join(' ');
+                heightLine.setAttribute('points', heightPoints);
+            }
+            
+            // Update velocity plot
+            if (visibleVelocityData.length > 0) {
+                const velocityLine = document.getElementById('velocity-line');
+                const velocityPoints = visibleVelocityData.map(d => 
+                    `${toPlotX(d.t)},${toVelocityPlotY(d.value)}`
+                ).join(' ');
+                velocityLine.setAttribute('points', velocityPoints);
+            }
+            
+            // Update grid labels every 0.5 seconds
+            if (Math.floor(time * 2) !== Math.floor((time - dt) * 2)) {
+                updateHeightGrid();
+                updateVelocityGrid();
+            }
+        }
+        
+        // Clear plots
+        function clearPlots() {
+            heightData = [];
+            velocityData = [];
+            document.getElementById('height-line').setAttribute('points', '');
+            document.getElementById('velocity-line').setAttribute('points', '');
+            maxHeightSeen = 3.5;
+            maxVelocitySeen = 10;
+            updateHeightGrid();
+            updateVelocityGrid();
+        }
+        
+        // Update display
+        function updateDisplay() {
+            document.getElementById('position').textContent = y.toFixed(3) + ' m';
+            document.getElementById('velocity').textContent = v.toFixed(3) + ' m/s';
+            document.getElementById('time').textContent = time.toFixed(3) + ' s';
+            document.getElementById('bounces').textContent = bounceCount;
+        }
+        
+        // Add trajectory point
+        function addTrajectoryPoint(x, y) {
+            trajectoryPoints.push({x: x, y: y, time: time});
+            if (trajectoryPoints.length > 200) {
+                trajectoryPoints.shift();
+            }
+            
+            // Update trajectory visualization
+            const trajectory = document.getElementById('trajectory');
+            trajectory.innerHTML = '';
+            for (let i = 1; i < trajectoryPoints.length; i++) {
+                const opacity = (i / trajectoryPoints.length) * 0.3;
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', trajectoryPoints[i-1].x);
+                line.setAttribute('y1', trajectoryPoints[i-1].y);
+                line.setAttribute('x2', trajectoryPoints[i].x);
+                line.setAttribute('y2', trajectoryPoints[i].y);
+                line.setAttribute('stroke', '#ff6b6b');
+                line.setAttribute('stroke-width', '2');
+                line.setAttribute('opacity', opacity);
+                trajectory.appendChild(line);
+            }
+        }
+        
+        // Animation function
+        function animate() {
+            if (isPaused) return;
+            
+            // Run multiple physics steps per frame for accuracy
+            const stepsPerFrame = 5;
+            for (let step = 0; step < stepsPerFrame; step++) {
+                // Continuous dynamics: ẋ = [v, -g]
+                const oldV = v;
+                v = v - g * dt;
+                y = y + v * dt;
+                
+                // Guard condition: y <= 0 (ball hits ground)
+                if (y <= 0 && v < 0) {
+                    // Calculate exact bounce time
+                    const tBounce = -oldV / g;
+                    
+                    // Reset: velocity reversal with energy loss
+                    y = 0;
+                    v = -gamma * oldV;
+                    bounceCount++;
+                    
+                    // Add bounce effect
+                    const ball = document.getElementById('ball');
+                    ball.style.filter = 'url(#glow)';
+                    setTimeout(() => {
+                        ball.style.filter = '';
+                    }, 100);
+                }
+                
+                // Stop if ball has essentially stopped bouncing
+                if (Math.abs(v) < 0.01 && y < 0.01) {
+                    y = 0;
+                    v = 0;
+                }
+                
+                // Update time
+                time += dt;
+                
+                // Update plots with each physics step
+                updatePlots();
+            }
+            
+            // Update ball position (visual update once per frame)
+            const ball = document.getElementById('ball');
+            const svgY = toSVGY(y);
+            ball.setAttribute('cy', svgY);
+            
+            // Update shadow
+            const shadow = document.getElementById('shadow');
+            const shadowScale = Math.max(0.2, 1 - y/5);
+            shadow.setAttribute('rx', 20 * shadowScale);
+            shadow.setAttribute('ry', 5 * shadowScale);
+            shadow.setAttribute('opacity', 0.2 * shadowScale);
+            
+            // Get ball center X position
+            const ballRect = ball.getBoundingClientRect();
+            const svgRect = document.getElementById('animation-svg').getBoundingClientRect();
+            const ballCenterX = ballRect.left - svgRect.left + ballRect.width / 2;
+            
+            // Add to trajectory
+            addTrajectoryPoint(ballCenterX, svgY);
+            
+            // Update display
+            updateDisplay();
+            
+            // Continue animation
+            animationId = requestAnimationFrame(animate);
+        }
+        
+        function startAnimation() {
+            isPaused = false;
+            if (!animationId) {
+                animate();
+            }
+        }
+        
+        function pauseAnimation() {
+            isPaused = true;
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+                animationId = null;
+            }
+        }
+        
+        function resetAnimation() {
+            pauseAnimation();
+            y = 3.0;
+            v = 0.0;
+            time = 0;
+            bounceCount = 0;
+            trajectoryPoints = [];
+            document.getElementById('trajectory').innerHTML = '';
+            
+            clearPlots();
+            
+            const ball = document.getElementById('ball');
+            ball.setAttribute('cy', toSVGY(y));
+            
+            updateDisplay();
+        }
+        
+        function changeInitialConditions() {
+            resetAnimation();
+            // Random initial conditions within the specified range
+            y = 0.1 + Math.random() * 0.9;  // Between 0.1 and 1.0 meters
+            v = -1 + Math.random() * 2;     // Between -1 and 1 m/s
+            
+            const ball = document.getElementById('ball');
+            ball.setAttribute('cy', toSVGY(y));
+            
+            updateDisplay();
+        }
+        
+        // Initialize
+        initializePlots();
+        resetAnimation();
+    </script>
+</body>
+</html>
