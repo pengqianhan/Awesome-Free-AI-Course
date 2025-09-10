@@ -67,5 +67,22 @@ where:
     \end{itemize}
 \end{itemize}
 
-
+Given the system of equations:
+\begin{align*}
+\dot{h} &= v \\
+\dot{v} &= -9.81
+\end{align*}
+Let the state vector be $x = \begin{bmatrix} h \\ v \end{bmatrix}$. The system can be written in the form $\dot{x} = Ax + Bu + c$ as:
+\[
+\begin{bmatrix} \dot{h} \\ \dot{v} \end{bmatrix} = 
+\begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} 
+\begin{bmatrix} h \\ v \end{bmatrix} + 
+\begin{bmatrix} 0 \\ 0 \end{bmatrix} u +
+\begin{bmatrix} 0 \\ -9.81 \end{bmatrix}
+\]
+Where:
+\[
+A = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}, \quad B = \begin{bmatrix} 0 \\ 0 \end{bmatrix}, \quad c = \begin{bmatrix} 0 \\ -9.81 \end{bmatrix}
+\]
+Since there is no external input, $u$ is considered to be zero.
 \end{document}
