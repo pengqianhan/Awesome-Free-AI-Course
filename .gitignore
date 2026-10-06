@@ -1,14 +1,14 @@
-Leaning_Notes/.DS_Store
-Leaning_Notes/AutomataLearning
-!Leaning_Notes/AutomataLearning/hybrid_systems_references.bib
-!Leaning_Notes/AutomataLearning/hybrid_systems_identification_workshop.tex
-!Leaning_Notes/AutomataLearning/hybrid_systems_identification_workshop.pdf
-!Leaning_Notes/AutomataLearning/bouncing-ball-animation.html
-!Leaning_Notes/AutomataLearning/*.tex
-!Leaning_Notes/AutomataLearning/*.pdf
-!Leaning_Notes/AutomataLearning/automata_defination/*.tex
-!Leaning_Notes/AutomataLearning/automata_defination/*.pdf
-!Leaning_Notes/AutomataLearning/automata_defination/*.md
+notes/Learning_Notes/.DS_Store
+notes/Learning_Notes/AutomataLearning
+!notes/Learning_Notes/AutomataLearning/hybrid_systems_references.bib
+!notes/Learning_Notes/AutomataLearning/hybrid_systems_identification_workshop.tex
+!notes/Learning_Notes/AutomataLearning/hybrid_systems_identification_workshop.pdf
+!notes/Learning_Notes/AutomataLearning/bouncing-ball-animation.html
+!notes/Learning_Notes/AutomataLearning/*.tex
+!notes/Learning_Notes/AutomataLearning/*.pdf
+!notes/Learning_Notes/AutomataLearning/automata_defination/*.tex
+!notes/Learning_Notes/AutomataLearning/automata_defination/*.pdf
+!notes/Learning_Notes/AutomataLearning/automata_defination/*.md
 
 ### 
 .DS_Store
