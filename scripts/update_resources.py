@@ -3,7 +3,8 @@
 
 流程：
 1. 用 CATEGORIES 里的搜索词在 GitHub 搜索，收集候选项目；
-2. 只保留名称或简介里像「学习资料」的项目（教程、课程、笔记、书……）；
+2. 跳过已收录的项目（仓库链接或项目主页已在文档里）和忽略清单里的项目，
+   只保留名称或简介里像「学习资料」的项目（教程、课程、笔记、书……）；
 3. 用每个类别的关键词给项目打分：名称命中 3 分、简介命中 2 分、topics 命中 1 分，
    归入得分最高的类别，同分时取 CATEGORIES 里靠前的；名称和简介都没命中的项目跳过；
 4. 类别在文档里已存在（`## 标题` 完全一致），就追加到该类别下的 `### GitHub 高星项目`；
@@ -114,6 +115,8 @@ LEARNING_PATTERN = re.compile(
 # ---------------------------------------------------------------------------
 
 GITHUB_REPO_RE = re.compile(r"github\.com/([\w.-]+)/([\w.-]+)", re.IGNORECASE)
+URL_RE = re.compile(r"https?://[^\s)>\]]+")
+EMOJI_RE = re.compile("[\U0001F000-\U0001FAFF☀-➿️‍]")
 
 
 def search_repos(query, token):
@@ -136,6 +139,18 @@ def search_repos(query, token):
 
 def listed_repos(text):
     return {f"{owner}/{repo}".lower().removesuffix(".git") for owner, repo in GITHUB_REPO_RE.findall(text)}
+
+
+def url_key(url):
+    """把链接归一成「域名 + 路径」，用于比对项目主页是否已经以其他形式收录。"""
+    parts = urllib.parse.urlsplit(url.strip())
+    host = parts.netloc.lower().removeprefix("www.")
+    path = re.sub(r"/(index\.html?)?$", "", parts.path.lower())
+    return host + path
+
+
+def listed_urls(text):
+    return {url_key(url) for url in URL_RE.findall(text)}
 
 
 def ignored_repos():
@@ -173,8 +188,14 @@ def classify(repo):
     return next(c["title"] for score, c in candidates if score == best)
 
 
+def clean_description(repo):
+    """去掉 emoji，合并多余空白。"""
+    description = re.sub(r"\s+", " ", EMOJI_RE.sub("", repo.get("description") or ""))
+    return re.sub(r" ([;,.!?:])", r"\1", description).strip()
+
+
 def format_item(repo):
-    description = re.sub(r"\s+", " ", repo.get("description") or "").strip()
+    description = clean_description(repo)
     if len(description) > 150:
         description = description[:149].rstrip(" .…") + "…"
     item = f"- [{repo['name']}]({repo['html_url']})"
@@ -238,7 +259,7 @@ def write_summary(path, picked, new_titles):
         parts.append(f"### {title}{'（新建类别）' if title in new_titles else ''}")
         parts.append("")
         for repo in repos:
-            description = re.sub(r"\s+", " ", repo.get("description") or "").strip()
+            description = clean_description(repo)
             parts.append(f"- [{repo['full_name']}]({repo['html_url']}) ⭐ {repo['stargazers_count']:,} — {description}")
         parts.append("")
     parts.append(
@@ -248,7 +269,7 @@ def write_summary(path, picked, new_titles):
     Path(path).write_text("\n".join(parts) + "\n", encoding="utf-8")
 
 
-def collect_candidates(token, seen):
+def collect_candidates(token, seen, seen_urls):
     delay = 2.5 if token else 7  # 搜索接口限流：有 token 每分钟 30 次，没有每分钟 10 次
     since = (datetime.date.today() - datetime.timedelta(days=ACTIVE_WITHIN_DAYS)).isoformat()
     candidates = {}
@@ -260,7 +281,9 @@ def collect_candidates(token, seen):
             )
             for repo in search_repos(full_query, token):
                 key = repo["full_name"].lower()
-                if key not in seen and is_learning_resource(repo):
+                # 主页已经以其他链接收录过的（如 labml.ai），也算重复
+                homepage_listed = bool(repo.get("homepage")) and url_key(repo["homepage"]) in seen_urls
+                if key not in seen and not homepage_listed and is_learning_resource(repo):
                     candidates[key] = repo
             time.sleep(delay)
     return sorted(candidates.values(), key=lambda repo: repo["stargazers_count"], reverse=True)
@@ -280,7 +303,7 @@ def main():
     # 按 CATEGORIES 的顺序排列，生成的文档和 PR 描述顺序稳定
     picked = {category["title"]: [] for category in CATEGORIES}
     total = 0
-    for repo in collect_candidates(os.environ.get("GITHUB_TOKEN"), seen):
+    for repo in collect_candidates(os.environ.get("GITHUB_TOKEN"), seen, listed_urls(text)):
         title = classify(repo)
         if title is None or len(picked[title]) >= MAX_PER_CATEGORY:
             continue
