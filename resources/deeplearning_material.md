@@ -11,6 +11,9 @@
 - [图神经网络资料](#图神经网络资料)
 - [LLM 学习资料](#llm-学习资料)
 - [扩散模型与流模型](#扩散模型与流模型)
+- [AI Agent](#ai-agent)
+- [自然语言处理](#自然语言处理)
+- [计算机视觉](#计算机视觉)
 - [在线工具](#在线工具)
 - [数学基础](#数学基础)
 - [计算机学习资料](#计算机学习资料)
@@ -66,6 +69,14 @@
 - [DeepLearning Tutorial](https://github.com/Mikoto10032/DeepLearning)：深度学习资料汇总
 - [Data-Science-Notes](https://github.com/fengdu78/Data-Science-Notes)
 
+### GitHub 高星项目
+
+- [annotated_deep_learning_paper_implementations](https://github.com/labmlai/annotated_deep_learning_paper_implementations)：🧑‍🏫 60+ Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit,…
+- [awesome-deep-learning](https://github.com/ChristosChristofidis/awesome-deep-learning)：A curated list of awesome Deep Learning tutorials, projects and communities.
+- [deep-learning-with-python-notebooks](https://github.com/fchollet/deep-learning-with-python-notebooks)：Jupyter notebooks for the code samples of the book "Deep Learning with Python"
+- [pytorch-deep-learning](https://github.com/mrdbourke/pytorch-deep-learning)：Materials for the Learn PyTorch for Deep Learning: Zero to Mastery course.
+- [Awesome-pytorch-list](https://github.com/bharathgs/Awesome-pytorch-list)：A comprehensive list of pytorch related content on github,such as different models,implementations,helper libraries,tutorials etc.
+
 ## 机器学习资料
 
 ### 吴恩达机器学习
@@ -102,6 +113,14 @@
 
 - [视频课程](https://www.bilibili.com/video/BV1jt411b76n)：研究生课程，数学味很浓
 
+### GitHub 高星项目
+
+- [machine-learning-zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp)：Learn ML engineering for free in 4 months! Register here 👇🏼
+- [mlcourse.ai](https://github.com/Yorko/mlcourse.ai)：Open Machine Learning Course
+- [machine_learning_examples](https://github.com/lazyprogrammer/machine_learning_examples)：A collection of machine learning examples and tutorials.
+- [Machine-Learning-Specialization-Coursera](https://github.com/greyhatguy007/Machine-Learning-Specialization-Coursera)：Contains Solutions and Notes for the Machine Learning Specialization By Stanford University and Deeplearning.ai - Coursera (2022) by Prof. Andrew NG
+- [zero-to-mastery-ml](https://github.com/mrdbourke/zero-to-mastery-ml)：All course materials for the Zero to Mastery Machine Learning and Data Science course.
+
 ## 强化学习资料
 
 ### 西湖大学《强化学习的数学原理》
@@ -125,6 +144,11 @@
 - [OpenAI Spinning Up](https://openai.com/blog/spinning-up-in-deep-rl/)：从 VPG（Vanilla Policy Gradient）到 TRPO（Trust Region Policy Optimization）、SAC（Soft Actor-Critic）均有实现，OpenAI 出品，代码质量高
 - [Stable Baselines](https://stable-baselines.readthedocs.io/en/master/)：大量深度强化学习算法的优质实现，文档丰富，包含 Colab Notebook，深度强化学习入坑必看
 
+### GitHub 高星项目
+
+- [Practical_RL](https://github.com/yandexdataschool/Practical_RL)：A course in reinforcement learning in the wild
+- [deep-rl-class](https://github.com/huggingface/deep-rl-class)：This repo contains the Hugging Face Deep Reinforcement Learning Course.
+
 ## 图神经网络资料
 
 ### William L. Hamilton《图表示学习》
@@ -144,9 +168,39 @@
 - [MiniMind](https://github.com/jingyaogong/minimind)：2 小时完全从 0 训练 26M 参数的小 GPT
 - [LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch)：Sebastian Raschka 出品，用 PyTorch 从零一步步实现一个类 ChatGPT 的 LLM
 
+### GitHub 高星项目
+
+- [llm-course](https://github.com/mlabonne/llm-course)：Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.
+- [RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques)：This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. Each technique has a detailed notebook tutori…
+- [train-llm-from-scratch](https://github.com/FareedKhan-dev/train-llm-from-scratch)：A straightforward method for training your LLM, from downloading data to generating text.
+- [Prompt_Engineering](https://github.com/NirDiamant/Prompt_Engineering)：22 prompt engineering techniques with hands-on Jupyter Notebook tutorials, from fundamental concepts to advanced strategies for leveraging LLMs.
+- [llm_engineering](https://github.com/ed-donner/llm_engineering)：Repo to accompany my mastering LLM engineering course
+
 ## 扩散模型与流模型
 
 - [Introduction to Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/)：MIT 6.S184 课程 *Generative AI with Stochastic Differential Equations*（[配套讲义论文](https://arxiv.org/abs/2506.02070)）
+
+## AI Agent
+
+### GitHub 高星项目
+
+- [hello-agents](https://github.com/datawhalechina/hello-agents)：📚 《从零开始构建智能体》——从零开始的智能体原理与实践教程
+- [learn-claude-code](https://github.com/shareAI-lab/learn-claude-code)：Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1
+- [ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)：In-depth tutorials on LLMs, RAGs and real-world AI agent applications.
+- [GenAI_Agents](https://github.com/NirDiamant/GenAI_Agents)：50+ tutorials and implementations for Generative AI Agent techniques, from basic conversational bots to complex multi-agent systems.
+- [agents-towards-production](https://github.com/NirDiamant/agents-towards-production)：End-to-end, code-first tutorials for building production-grade GenAI agents. From prototype to enterprise deployment.
+
+## 自然语言处理
+
+### GitHub 高星项目
+
+- [nlp_course](https://github.com/yandexdataschool/nlp_course)：YSDA course in Natural Language Processing
+
+## 计算机视觉
+
+### GitHub 高星项目
+
+- [notebooks](https://github.com/roboflow/notebooks)：A collection of tutorials on state-of-the-art computer vision models and techniques. Explore everything from foundational architectures like ResNet t…
 
 ## 在线工具
 
@@ -155,6 +209,10 @@
 ## 数学基础
 
 - [《矩阵力量》（鸢尾花书）](https://github.com/Visualize-ML/Book4_Power-of-Matrix)：从加减乘除到机器学习
+
+### GitHub 高星项目
+
+- [mml-book.github.io](https://github.com/mml-book/mml-book.github.io)：Companion webpage to the book "Mathematics For Machine Learning"
 
 ## 计算机学习资料
 
