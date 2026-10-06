@@ -2,9 +2,9 @@
 
 🗂️ 针对视频里所用的 Google colab 我加上了自己的理解和一些补充知识：
 
-- [gpt_dev_注释版.ipynb] 在 Karpathy 视频里的 google colab 的基础上加了注释和解释
-- [scaling_dot_products.md](scaling_dot_products.md) 是关于 scaling dot products 的数学推导
-- [pics\nanoGPT_train.png](pics\nanoGPT_train.png) 是 nanoGPT 的 模型架构以及维度变换
+- [gpt_dev_注释版.ipynb](gpt_dev_注释版.ipynb) 在 Karpathy 视频里的 google colab 的基础上加了注释和解释
+- [scaling_dot_products.md](../../Learning_Notes/scaling_dot_products.md) 是关于 scaling dot products 的数学推导
+- [pics/nanoGPT_train.png](pics/nanoGPT_train.png) 是 nanoGPT 的 模型架构以及维度变换
 
 ![这是 nanoGPT 的训练结构图](pics/nanoGPT_train.png)
 
