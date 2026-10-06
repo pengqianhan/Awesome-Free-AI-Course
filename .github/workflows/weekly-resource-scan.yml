@@ -1,0 +1,32 @@
+name: Weekly resource scan
+
+on:
+  schedule:
+    - cron: "0 1 * * 1" # 每周一 01:00 UTC（北京时间 09:00）
+  workflow_dispatch: # 也可以在 Actions 页面手动触发
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan GitHub for high-star tutorials
+        id: scan
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/update_resources.py --summary "$RUNNER_TEMP/pr-body.md"
+
+      - name: Open pull request
+        if: steps.scan.outputs.count != '0'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: bot/weekly-resource-scan
+          delete-branch: true
+          commit-message: "docs: add high-star GitHub tutorials from weekly scan"
+          title: "docs: 每周高星教程自动收录"
+          body-path: ${{ runner.temp }}/pr-body.md

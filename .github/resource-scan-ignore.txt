@@ -1,0 +1,8 @@
+# 每周扫描时跳过的仓库，每行一个 owner/repo（不区分大小写），# 后面是注释。
+# 在自动 PR 里删掉某个项目后，把它加到这里，以后就不会再被收录。
+# 例如：
+# someone/some-repo  # 内容太浅
+
+deeplearning4j/deeplearning4j  # 深度学习框架，不是教程
+nashsu/llm_wiki                # 桌面应用，不是教程
+JoseDeFreitas/awesome-youtubers  # 科技类 YouTuber 列表，和 AI 关系不大
