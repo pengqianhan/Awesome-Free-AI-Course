@@ -71,7 +71,6 @@
 
 ### GitHub 高星项目
 
-- [annotated_deep_learning_paper_implementations](https://github.com/labmlai/annotated_deep_learning_paper_implementations)：🧑‍🏫 60+ Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit,…
 - [awesome-deep-learning](https://github.com/ChristosChristofidis/awesome-deep-learning)：A curated list of awesome Deep Learning tutorials, projects and communities.
 - [deep-learning-with-python-notebooks](https://github.com/fchollet/deep-learning-with-python-notebooks)：Jupyter notebooks for the code samples of the book "Deep Learning with Python"
 - [pytorch-deep-learning](https://github.com/mrdbourke/pytorch-deep-learning)：Materials for the Learn PyTorch for Deep Learning: Zero to Mastery course.
@@ -115,10 +114,9 @@
 
 ### GitHub 高星项目
 
-- [machine-learning-zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp)：Learn ML engineering for free in 4 months! Register here 👇🏼
+- [machine-learning-zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp)：DataTalksClub 出品的免费机器学习工程课程，4 个月学完
 - [mlcourse.ai](https://github.com/Yorko/mlcourse.ai)：Open Machine Learning Course
 - [machine_learning_examples](https://github.com/lazyprogrammer/machine_learning_examples)：A collection of machine learning examples and tutorials.
-- [Machine-Learning-Specialization-Coursera](https://github.com/greyhatguy007/Machine-Learning-Specialization-Coursera)：Contains Solutions and Notes for the Machine Learning Specialization By Stanford University and Deeplearning.ai - Coursera (2022) by Prof. Andrew NG
 - [zero-to-mastery-ml](https://github.com/mrdbourke/zero-to-mastery-ml)：All course materials for the Zero to Mastery Machine Learning and Data Science course.
 
 ## 强化学习资料
@@ -173,7 +171,6 @@
 - [llm-course](https://github.com/mlabonne/llm-course)：Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.
 - [RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques)：This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. Each technique has a detailed notebook tutori…
 - [train-llm-from-scratch](https://github.com/FareedKhan-dev/train-llm-from-scratch)：A straightforward method for training your LLM, from downloading data to generating text.
-- [Prompt_Engineering](https://github.com/NirDiamant/Prompt_Engineering)：22 prompt engineering techniques with hands-on Jupyter Notebook tutorials, from fundamental concepts to advanced strategies for leveraging LLMs.
 - [llm_engineering](https://github.com/ed-donner/llm_engineering)：Repo to accompany my mastering LLM engineering course
 
 ## 扩散模型与流模型
@@ -188,7 +185,6 @@
 - [learn-claude-code](https://github.com/shareAI-lab/learn-claude-code)：Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1
 - [ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)：In-depth tutorials on LLMs, RAGs and real-world AI agent applications.
 - [GenAI_Agents](https://github.com/NirDiamant/GenAI_Agents)：50+ tutorials and implementations for Generative AI Agent techniques, from basic conversational bots to complex multi-agent systems.
-- [agents-towards-production](https://github.com/NirDiamant/agents-towards-production)：End-to-end, code-first tutorials for building production-grade GenAI agents. From prototype to enterprise deployment.
 
 ## 自然语言处理
 

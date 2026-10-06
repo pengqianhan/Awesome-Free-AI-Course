@@ -6,3 +6,7 @@
 deeplearning4j/deeplearning4j  # 深度学习框架，不是教程
 nashsu/llm_wiki                # 桌面应用，不是教程
 JoseDeFreitas/awesome-youtubers  # 科技类 YouTuber 列表，和 AI 关系不大
+labmlai/annotated_deep_learning_paper_implementations  # 与已收录的 labml.ai（nn.labml.ai）是同一项目
+greyhatguy007/Machine-Learning-Specialization-Coursera  # Coursera 作业答案合集，不是教程
+NirDiamant/Prompt_Engineering  # 同一作者收录过多，只保留 RAG_Techniques 和 GenAI_Agents
+NirDiamant/agents-towards-production  # 同上
