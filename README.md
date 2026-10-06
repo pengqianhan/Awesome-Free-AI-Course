@@ -22,7 +22,6 @@
 - [项目结构](#-项目结构)
 - [内容导航](#-内容导航)
   - [学习资料合集](#-学习资料合集-resources)
-  - [入门教程](#-入门教程-tutorials)
   - [学习笔记](#-学习笔记-notes)
 - [贡献指南](#-贡献指南)
 - [致谢与声明](#-致谢与声明)
@@ -40,8 +39,7 @@
 
 | 如果你是…… | 推荐从这里开始 |
 | --- | --- |
-| 零基础，想从 Python 学到深度学习 | [从 0 开始深度学习](tutorials/从0开始深度学习) → 先看 [环境配置](tutorials/从0开始深度学习/环境配置.md) |
-| 想找成体系的课程和书籍 | [深度学习资料合集](resources/deeplearning_material.md) |
+| 零基础入门，或想找成体系的课程和书籍 | [深度学习资料合集](resources/deeplearning_material.md) |
 | 想专门学习 Transformer | [Awesome Transformer Learning](resources/Awesome-Transformer-learning/Chinese_version.md)（[English](resources/Awesome-Transformer-learning/English_version.md)） |
 | 想从零理解 / 训练一个 LLM | [nanoGPT 学习笔记](notes/LLM学习笔记/nanoGPT学习笔记) · [minimind 学习笔记](notes/LLM学习笔记/minimind学习笔记) |
 | 准备写论文 | [论文写作资料](resources/writing_papers.md) |
@@ -64,10 +62,6 @@ Awesome-Free-AI-Course
 │   ├── deeplearning_material.md       #    AI / 深度学习资料总表
 │   ├── writing_papers.md              #    论文写作资料
 │   └── Awesome-Transformer-learning/  #    Transformer 专题资料（中 / 英）
-├── tutorials/                         # 🎓 入门教程
-│   └── 从0开始深度学习/                  #    从 Python 入门到深度学习实践
-│       ├── 环境配置.md
-│       └── chapter0/                  #    Python 基础 + MNIST / CIFAR-10 示例
 └── notes/                             # 📝 学习笔记
     ├── LLM学习笔记/                     #    LLM 从零构建相关笔记
     │   ├── nanoGPT学习笔记/
@@ -87,14 +81,6 @@ Awesome-Free-AI-Course
 | [deeplearning_material.md](resources/deeplearning_material.md) | 所有学习资料的总表，包括 Python、深度学习、机器学习、强化学习、图神经网络、LLM、Diffusion / Flow 模型、数学基础、计算机基础、控制理论与深度学习等，不定期更新 |
 | [Awesome-Transformer-learning](resources/Awesome-Transformer-learning) | Transformer 专题资料：结构讲解、子模块（位置编码、Softmax、缩放点积）、FlashAttention、Vision Transformer 等，提供 [中文版](resources/Awesome-Transformer-learning/Chinese_version.md) 和 [英文版](resources/Awesome-Transformer-learning/English_version.md) |
 | [writing_papers.md](resources/writing_papers.md) | AI / ML 论文写作教程与建议 |
-
-### 🎓 入门教程 (`tutorials/`)
-
-| 内容 | 说明 |
-| --- | --- |
-| [环境配置](tutorials/从0开始深度学习/环境配置.md) | Miniconda、VS Code / Cursor 等 IDE、Claude Code / Codex 等终端编程工具的安装与配置 |
-| [chapter0](tutorials/从0开始深度学习/chapter0/chapter0.ipynb) | Python 入门：`.py` 与 `.ipynb`、数据类型等基础 |
-| [深度学习示例代码](tutorials/从0开始深度学习/chapter0/深度学习示例代码) | [MNIST 手写数字识别](tutorials/从0开始深度学习/chapter0/深度学习示例代码/3.2-mnist.ipynb)、[CIFAR-10 图像分类](tutorials/从0开始深度学习/chapter0/深度学习示例代码/cifar10_tutorial.ipynb) |
 
 ### 📝 学习笔记 (`notes/`)
 
