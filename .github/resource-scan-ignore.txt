@@ -10,3 +10,4 @@ labmlai/annotated_deep_learning_paper_implementations  # 与已收录的 labml.a
 greyhatguy007/Machine-Learning-Specialization-Coursera  # Coursera 作业答案合集，不是教程
 NirDiamant/Prompt_Engineering  # 同一作者收录过多，只保留 RAG_Techniques 和 GenAI_Agents
 NirDiamant/agents-towards-production  # 同上
+janishar/mit-deep-learning-book-pdf  # 花书 PDF 转载，作者未授权，有版权问题
