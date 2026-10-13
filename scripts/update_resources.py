@@ -4,10 +4,13 @@
 流程：
 1. 用 CATEGORIES 里的搜索词在 GitHub 搜索，收集候选项目；
 2. 跳过已收录的项目（仓库链接或项目主页已在文档里）和忽略清单里的项目，
-   只保留名称或简介里像「学习资料」的项目（教程、课程、笔记、书……）；
+   只保留名称或简介里像「学习资料」的项目（教程、课程、笔记、书……），
+   简介过长的项目（多半是堆砌关键词的垃圾仓库）也跳过；
 3. 用每个类别的关键词给项目打分：名称命中 3 分、简介命中 2 分、topics 命中 1 分，
    归入得分最高的类别，同分时取 CATEGORIES 里靠前的；名称和简介都没命中的项目跳过；
-4. 类别在文档里已存在（`## 标题` 完全一致），就追加到该类别下的 `### GitHub 高星项目`；
+4. 每个类别的 `### GitHub 高星项目` 收满 CATEGORY_CAPACITY 个以后，
+   只有 star 数超过 SATURATED_MIN_STARS 的项目才会继续收录；
+5. 类别在文档里已存在（`## 标题` 完全一致），就追加到该类别下的 `### GitHub 高星项目`；
    不存在则新建类别，放在「在线工具」之前，并加入目录。
 
 本地试运行（不修改文件）：
@@ -37,6 +40,9 @@ IGNORE_PATH = ROOT / ".github" / "resource-scan-ignore.txt"
 MIN_STARS = 1000            # star 数下限（不含）
 MAX_PER_CATEGORY = 5        # 每次每个类别最多新增几个
 MAX_TOTAL = 25              # 每次最多新增几个
+CATEGORY_CAPACITY = 4       # 每个类别的「GitHub 高星项目」收满几个算饱和（按文档里已有的条目数算）
+SATURATED_MIN_STARS = 20000 # 类别饱和后，star 数超过这个值的项目才继续收录
+MAX_DESCRIPTION_LENGTH = 350  # 简介超过这个长度的项目直接跳过（正常简介不会这么长）
 ACTIVE_WITHIN_DAYS = 730    # 只收录最近两年内还有提交的项目
 SUBSECTION = "### GitHub 高星项目"
 NEW_CATEGORY_BEFORE = "在线工具"  # 新类别插在这个类别之前；找不到则放到文末
@@ -96,12 +102,6 @@ CATEGORIES = [
         "title": "机器学习资料",
         "queries": ["machine learning tutorial", "machine learning course", "machine learning notes"],
         "keywords": r"machine learning|\bml\b|scikit learn|sklearn|机器学习",
-    },
-    {
-        "title": "Python 学习资料",
-        "queries": ["python tutorial beginners", "learn python course"],
-        "keywords": r"\bpython\b",
-        "fallback": True,
     },
 ]
 
@@ -165,6 +165,8 @@ def normalize(text):
 
 
 def is_learning_resource(repo):
+    if len(repo.get("description") or "") > MAX_DESCRIPTION_LENGTH:
+        return False
     return bool(LEARNING_PATTERN.search(normalize(f"{repo['name']} {repo.get('description')}")))
 
 
@@ -216,10 +218,27 @@ def find_section(lines, title):
     return start, end
 
 
-def add_to_existing_category(lines, start, end, items):
+def find_subsection(lines, start, end):
+    """返回类别里 SUBSECTION 小节的 (起始行, 结束行)，结束行为下一个标题，不包含在内。"""
     sub = next((i for i in range(start + 1, end) if lines[i].strip() == SUBSECTION), None)
-    if sub is not None:
-        insert_at = next((i for i in range(sub + 1, end) if lines[i].startswith("#")), end)
+    if sub is None:
+        return None
+    return sub, next((i for i in range(sub + 1, end) if lines[i].startswith("#")), end)
+
+
+def listed_count(lines, title):
+    """类别的 SUBSECTION 小节里已经收录了几个项目。"""
+    section = find_section(lines, title)
+    subsection = section and find_subsection(lines, *section)
+    if not subsection:
+        return 0
+    return sum(lines[i].startswith("- [") for i in range(*subsection))
+
+
+def add_to_existing_category(lines, start, end, items):
+    subsection = find_subsection(lines, start, end)
+    if subsection:
+        sub, insert_at = subsection
         while insert_at > sub + 1 and not lines[insert_at - 1].strip():
             insert_at -= 1
         lines[insert_at:insert_at] = items
@@ -300,12 +319,17 @@ def main():
     if os.environ.get("GITHUB_REPOSITORY"):
         seen.add(os.environ["GITHUB_REPOSITORY"].lower())
 
+    lines = text.split("\n")
     # 按 CATEGORIES 的顺序排列，生成的文档和 PR 描述顺序稳定
     picked = {category["title"]: [] for category in CATEGORIES}
+    room = {title: CATEGORY_CAPACITY - listed_count(lines, title) for title in picked}
     total = 0
     for repo in collect_candidates(os.environ.get("GITHUB_TOKEN"), seen, listed_urls(text)):
         title = classify(repo)
         if title is None or len(picked[title]) >= MAX_PER_CATEGORY:
+            continue
+        # 候选按 star 数从高到低排列，类别饱和后只有特别突出的项目才继续收录
+        if len(picked[title]) >= room[title] and repo["stargazers_count"] <= SATURATED_MIN_STARS:
             continue
         picked[title].append(repo)
         total += 1
@@ -313,7 +337,6 @@ def main():
             break
     picked = {title: repos for title, repos in picked.items() if repos}
 
-    lines = text.split("\n")
     new_titles = set()
     for title, repos in picked.items():
         items = [format_item(repo) for repo in repos]
