@@ -146,6 +146,7 @@
 
 - [Practical_RL](https://github.com/yandexdataschool/Practical_RL)：A course in reinforcement learning in the wild
 - [deep-rl-class](https://github.com/huggingface/deep-rl-class)：This repo contains the Hugging Face Deep Reinforcement Learning Course.
+- [hands-on-modern-rl](https://github.com/walkinglabs/hands-on-modern-rl)：An open-source, hands-on curriculum bridging the gap from basic RL concepts to LLM alignment, RLVR, and advanced Agentic systems.
 
 ## 图神经网络资料
 
@@ -176,6 +177,10 @@
 ## 扩散模型与流模型
 
 - [Introduction to Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/)：MIT 6.S184 课程 *Generative AI with Stochastic Differential Equations*（[配套讲义论文](https://arxiv.org/abs/2506.02070)）
+
+### GitHub 高星项目
+
+- [diffusion-models-class](https://github.com/huggingface/diffusion-models-class)：Materials for the Hugging Face Diffusion Models Course
 
 ## AI Agent
 
