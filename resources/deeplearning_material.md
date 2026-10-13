@@ -33,10 +33,6 @@
 - [北邮陈光老师 Python 视频](https://www.bilibili.com/video/BV1b7411N7P2)：陈光老师即微博及 B 站的「爱可可-爱生活」
 - [莫烦 Python](https://mofanpy.com/)：有 Python 课程也有机器学习课程，内容很多
 
-### GitHub 高星项目
-
-- [byte-of-python](https://github.com/swaroopch/byte-of-python)：Beginners book on Python - start here if you don't know programming
-
 ## 深度学习资料
 
 ### 李沐《动手学深度学习》（强烈推荐）
@@ -79,11 +75,6 @@
 - [deep-learning-with-python-notebooks](https://github.com/fchollet/deep-learning-with-python-notebooks)：Jupyter notebooks for the code samples of the book "Deep Learning with Python"
 - [pytorch-deep-learning](https://github.com/mrdbourke/pytorch-deep-learning)：Materials for the Learn PyTorch for Deep Learning: Zero to Mastery course.
 - [Awesome-pytorch-list](https://github.com/bharathgs/Awesome-pytorch-list)：A comprehensive list of pytorch related content on github,such as different models,implementations,helper libraries,tutorials etc.
-- [the-incredible-pytorch](https://github.com/ritchieng/the-incredible-pytorch)：The Incredible PyTorch: a curated list of tutorials, papers, projects, communities and more relating to PyTorch.
-- [tutorials](https://github.com/pytorch/tutorials)：PyTorch tutorials.
-- [PyTorch_Tutorial](https://github.com/TingsongYu/PyTorch_Tutorial)：《Pytorch模型训练实用教程》中配套代码
-- [PyTorch-Tutorial-2nd](https://github.com/TingsongYu/PyTorch-Tutorial-2nd)：《Pytorch实用教程》（第二版）无论是零基础入门，还是CV、NLP、LLM项目应用，或是进阶工程化部署落地，在这里都有。相信在本书的帮助下，读者将能够轻松掌握 PyTorch 的使用，成为一名优秀的深度学习工程师。
-- [Person_reID_baseline_pytorch](https://github.com/layumi/Person_reID_baseline_pytorch)：:bouncing_ball_person: Pytorch ReID: A tiny, friendly, strong pytorch implement of person re-id / vehicle re-id baseline. Tutorial https://github.com…
 
 ## 机器学习资料
 
@@ -127,11 +118,6 @@
 - [mlcourse.ai](https://github.com/Yorko/mlcourse.ai)：Open Machine Learning Course
 - [machine_learning_examples](https://github.com/lazyprogrammer/machine_learning_examples)：A collection of machine learning examples and tutorials.
 - [zero-to-mastery-ml](https://github.com/mrdbourke/zero-to-mastery-ml)：All course materials for the Zero to Mastery Machine Learning and Data Science course.
-- [machine-learning-course](https://github.com/instillai/machine-learning-course)：:speech_balloon: Machine Learning Course with Python:
-- [start-machine-learning](https://github.com/louisfb01/start-machine-learning)：A complete guide to start and improve in machine learning (ML), artificial intelligence (AI) in 2026 without ANY background in the field and stay up-…
-- [have-fun-with-machine-learning](https://github.com/humphd/have-fun-with-machine-learning)：An absolute beginner's guide to Machine Learning and Image Classification with Neural Networks
-- [AI-ML-Roadmap-from-scratch](https://github.com/aadi1011/AI-ML-Roadmap-from-scratch)：Become skilled in Artificial Intelligence, Machine Learning, Generative AI, Deep Learning, Data Science, Natural Language Processing, Reinforcement L…
-- [ml-course](https://github.com/girafe-ai/ml-course)：Open Machine Learning course
 
 ## 强化学习资料
 
@@ -161,8 +147,6 @@
 - [Practical_RL](https://github.com/yandexdataschool/Practical_RL)：A course in reinforcement learning in the wild
 - [deep-rl-class](https://github.com/huggingface/deep-rl-class)：This repo contains the Hugging Face Deep Reinforcement Learning Course.
 - [hands-on-modern-rl](https://github.com/walkinglabs/hands-on-modern-rl)：An open-source, hands-on curriculum bridging the gap from basic RL concepts to LLM alignment, RLVR, and advanced Agentic systems.
-- [china-dictatorship](https://github.com/cirosantilli/china-dictatorship)：反中共政治宣传库。Anti Chinese government propaganda. 住在中国真名用户的网友请别给星星，不然你要被警察请喝茶。常见问答集，新闻集和饭店和音乐建议。卐习万岁卐。冠状病毒审查郝海东新疆改造中心六四事件法轮功 996.ICU709大抓捕巴拿马文件邓家贵低端人口西藏骚乱…
-- [.github](https://github.com/gege-circle/.github)：这里是GitHub的草场，也是戈戈圈爱好者的交流地，主要讨论动漫、游戏、科技、人文、生活等所有话题，欢迎各位小伙伴们在此讨论趣事。This is GitHub grassland, and the community place for Gege circle lovers, mainly dis…
 
 ## 图神经网络资料
 
@@ -189,11 +173,6 @@
 - [RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques)：This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. Each technique has a detailed notebook tutori…
 - [train-llm-from-scratch](https://github.com/FareedKhan-dev/train-llm-from-scratch)：A straightforward method for training your LLM, from downloading data to generating text.
 - [llm_engineering](https://github.com/ed-donner/llm_engineering)：Repo to accompany my mastering LLM engineering course
-- [llm-zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp)：LLM Zoomcamp - a free online course about real-life applications of LLMs. In 10 weeks you will learn how to build an AI system that answers questions…
-- [learn-ai-engineering](https://github.com/ashishps1/learn-ai-engineering)：Learn AI and LLMs from scratch using free resources
-- [reasoning-from-scratch](https://github.com/rasbt/reasoning-from-scratch)：Implement a reasoning LLM in PyTorch from scratch, step by step
-- [tiny-llm](https://github.com/skyzh/tiny-llm)：learn LLM inference system on Apple Silicon for systems engineers: build a tiny vLLM + Qwen
-- [awesome-openclaw-tutorial](https://github.com/xianyu110/awesome-openclaw-tutorial)：OpenClaw 中文教程（4500+ Star · 已出版纸质书）：安装、配置、Skills、飞书接入与避坑｜作者的 GPT-6 / Codex / Claude Code 新项目见 README 顶部
 
 ## 扩散模型与流模型
 
@@ -211,11 +190,6 @@
 - [learn-claude-code](https://github.com/shareAI-lab/learn-claude-code)：Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1
 - [ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)：In-depth tutorials on LLMs, RAGs and real-world AI agent applications.
 - [GenAI_Agents](https://github.com/NirDiamant/GenAI_Agents)：50+ tutorials and implementations for Generative AI Agent techniques, from basic conversational bots to complex multi-agent systems.
-- [awesome-agentic-ai-zh](https://github.com/WenyuChiou/awesome-agentic-ai-zh)：A trilingual (繁中 / English / 简中) learning roadmap for agentic AI: from LLM basics to multi-agent systems, with 240+ curated resources and hands-on ex…
-- [agents](https://github.com/ed-donner/agents)：Repo for the Complete Agentic AI Engineering Course
-- [awesome-agent-skills](https://github.com/heilcheng/awesome-agent-skills)：Tutorials, Guides and Agent Skills Directories
-- [claude-code-ultimate-guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide)：The most comprehensive Claude Code guide: agentic workflows, hooks, skills, MCP servers, quizzes, and production-ready templates. 430K+ lines.
-- [ai-agents-from-zero](https://github.com/didilili/ai-agents-from-zero)：2026 最系统的 AI Agent 速成指南｜智能体实战教程 · 完整学习路径 + 实战项目 + 面试题库 · 对标大模型应用开发工程师岗位 · 覆盖LangChain / LangGraph / Coze / Dify / MCP / skills / LLM / RAG / 提示词 · 企业…
 
 ## 自然语言处理
 
