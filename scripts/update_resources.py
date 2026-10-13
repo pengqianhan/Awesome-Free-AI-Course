@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""扫描 GitHub 上 star 数超过 1000 的 AI 学习类项目，按类别追加到 resources/deeplearning_material.md。
+"""扫描 GitHub 上 star 数不少于 3000 的 AI 学习类项目，按类别追加到 resources/deeplearning_material.md。
 
 流程：
 1. 用 CATEGORIES 里的搜索词在 GitHub 搜索，收集候选项目；
@@ -37,7 +37,7 @@ IGNORE_PATH = ROOT / ".github" / "resource-scan-ignore.txt"
 # 可调整的配置
 # ---------------------------------------------------------------------------
 
-MIN_STARS = 1000            # star 数下限（不含）
+MIN_STARS = 3000            # star 数下限（含）
 MAX_PER_CATEGORY = 5        # 每次每个类别最多新增几个
 MAX_TOTAL = 25              # 每次最多新增几个
 CATEGORY_CAPACITY = 4       # 每个类别的「GitHub 高星项目」收满几个算饱和（按文档里已有的条目数算）
@@ -270,7 +270,7 @@ def add_new_category(lines, title, items):
 def write_summary(path, picked, new_titles):
     total = sum(len(repos) for repos in picked.values())
     parts = [
-        f"本周自动扫描到 **{total}** 个 star 超过 {MIN_STARS} 的学习类项目，已按类别加入 "
+        f"本周自动扫描到 **{total}** 个 star 不少于 {MIN_STARS} 的学习类项目，已按类别加入 "
         "`resources/deeplearning_material.md`。",
         "",
     ]
@@ -295,7 +295,7 @@ def collect_candidates(token, seen, seen_urls):
     for category in CATEGORIES:
         for query in category["queries"]:
             full_query = (
-                f"{query} in:name,description,topics stars:>{MIN_STARS} "
+                f"{query} in:name,description,topics stars:>={MIN_STARS} "
                 f"fork:false archived:false pushed:>{since}"
             )
             for repo in search_repos(full_query, token):
