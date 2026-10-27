@@ -166,7 +166,7 @@
 - [Cortex](https://github.com/qibin0506/Cortex)：个人构建 MoE 大模型，从预训练到 DPO 的完整实践
 - [MiniMind](https://github.com/jingyaogong/minimind)：2 小时完全从 0 训练 26M 参数的小 GPT
 - [LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch)：Sebastian Raschka 出品，用 PyTorch 从零一步步实现一个类 ChatGPT 的 LLM
-
+- [nano-ai](https://nano-ai.tech/): 从零手写大模型和图解大模型的课程。
 ### GitHub 高星项目
 
 - [llm-course](https://github.com/mlabonne/llm-course)：Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.
